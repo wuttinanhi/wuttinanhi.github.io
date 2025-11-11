@@ -1,0 +1,94 @@
+@reference "tailwindcss";
+
+/* * This imports Tailwind's 'base', 'components', and 'utilities' styles.
+ * It's the standard replacement for @reference "tailwindcss";
+ */
+
+/* @import "tailwindcss/preflight"; */
+/* @tailwind utilities; */
+
+/*
+ * Base styles for raw HTML elements.
+ * This is exactly what you had.
+ */
+@layer base {
+  body {
+    @apply bg-[#f0f2f5] font-sans m-0 p-5;
+  }
+}
+
+/*
+ * Your custom classes, now built with @apply.
+ * We put them in the 'components' layer so utility
+ * classes in your HTML can still override them.
+ */
+@layer components {
+  /* 1. The 3-column layout container */
+  .page-container {
+    @apply flex justify-center gap-5;
+  }
+
+  /* 2. The sidebars (I added shadow/rounding back) */
+  .sidebar {
+    @apply flex-1 max-w-[300px] p-5;
+    /* bg-white rounded-lg shadow-lg */
+  }
+
+  /* 3. The main A4 resume content (I added shadow back) */
+  .resume-content {
+    /* We use arbitrary values for exact print dimensions */
+    @apply w-[21cm] min-h-[29.7cm] max-h-[29.7cm] p-[1cm] bg-white;
+    /* shadow-xl box-border */
+  }
+
+  .text-header {
+    @apply text-blue-600 text-xl mt-2;
+  }
+
+  .text-sub-header {
+    @apply text-blue-600 text-lg pr-2;
+  }
+
+  p {
+    @apply text-sm;
+  }
+
+  ul {
+    @apply list-inside list-['-'];
+  }
+
+  ul > li {
+    @apply pt-1.5 text-sm;
+  }
+}
+
+/* --- 🖨️ Print Styles --- */
+
+/* * This block ONLY applies when printing.
+ * We use @apply inside it for the print-specific styles.
+ */
+@media print {
+  .left-sidebar,
+  .right-sidebar {
+    /* 1. Hide the sidebars */
+    @apply hidden;
+  }
+
+  body {
+    /* 2. Reset the page for printing */
+    @apply bg-white m-0 p-0;
+  }
+
+  .resume-content {
+    /* 3. Make the resume fill the print page */
+    @apply shadow-none w-full min-h-0 p-0;
+  }
+
+  /* * 4. The @page rule has no Tailwind equivalent.
+   * It MUST stay as plain CSS.
+   */
+  @page {
+    size: A4;
+    margin: 1cm;
+  }
+}

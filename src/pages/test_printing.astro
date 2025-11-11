@@ -1,0 +1,170 @@
+---
+// import BaseHead from "../components/BaseHead.astro";
+// import Footer from "../components/Footer.astro";
+// import Header from "../components/Header.astro";
+// import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+
+import "../styles/global.css";
+
+import "../styles/print.css";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web and Print Resume</title>
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+  </head>
+  <body>
+    <div class="page-container">
+      <aside class="sidebar left-sidebar">
+        <!-- <h2>Web Only</h2>
+        <p>This content is only visible on the website.</p>
+        <p>You could put navigation, links, or a profile picture here.</p> -->
+      </aside>
+
+      <main class="resume-content" id="a4-page">
+        <h1 class="text-5xl">WUTTINAN HANGLIM</h1>
+
+        <section>
+          <h2 class="text-header">Contact</h2>
+          <div>
+            <p>Address: Bukkhalo, Thonburi, Bangkok (10600) Thailand</p>
+            <p>E-mail: wuttinanwork@gmail.com</p>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="text-header">Skills</h2>
+
+          <p>
+            <span>Programming Languages:</span> Javascript, TypeScript, Python, SQL,
+            C#, Java, Python, Go, Rust
+          </p>
+          <p>
+            <span>Frameworks:</span> React, NextJS, Nuxt, Svelt
+          </p>
+          <p>
+            <span>Tools:</span>
+            Git, Github, Docker, Terraform, Bash
+          </p>
+          <p>
+            <span>Clouds:</span> DigitalOcean, Google Cloud Platform, Microsoft Azure,CloudFlare
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-header">Education</h2>
+          <span>Bachelor of Technology. Information of Technology.</span>
+          <p>
+            Faculty of Science and Technology. Suan Dusit University. 2019-2023
+            (First-class honours)
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-header">Experiences</h2>
+          <div class="mt-1.5">
+            <div class="flex justify-between items-center text-blue-700">
+              <p class="text-[1.0rem]">
+                Intern Software Tester and Software Developer Summit Computer
+              </p>
+              <p>16/01/2024 - 23/04/2024</p>
+            </div>
+
+            <ul>
+              <li>
+                Web Testing on corporate product projects using internal testing
+                tools to ensure system functionality, accuracy, and reliability.
+              </li>
+              <li>
+                Developing a Java JSF Website Project coaching by Senior
+                Software Engineer, gaining hands
+              </li>
+              <li>
+                on experience in software development, code quality practices,
+                and problem-solving within a professional development team.
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-1.5">
+            <div class="flex justify-between items-center text-blue-700">
+              <p class="text-[1.0rem]">
+                Intern Web Development and IT Support Suan Dusit University
+              </p>
+              <p>1/8/2023 - 1/11/2023</p>
+            </div>
+
+            <ul>
+              <li>
+                Website Maintenance and Content Management: Updated and
+                maintained the university’s WordPress website, ensuring accurate
+                and up-to-date information.
+              </li>
+              <li>
+                Collaborated on implementing a new website design to improve
+                usability and visual appearance.
+              </li>
+              <li>
+                Technical Support: Provided IT support by diagnosing and
+                repairing computers, printers, and other devices. Resolved
+                hardware and software issues.
+              </li>
+              <li>
+                Administrative and Event Support: Assisted with general office
+                tasks and supported university events, contributing to smooth
+                operations and successful event execution.
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="text-header mb-2">Projects</h2>
+
+          <!-- START PROJECTS LIST -->
+          <div class="flex flex-col gap-y-1.5">
+            <p>
+              Car Parking Reservation Project - Developed a Car Parking
+              Reservation System. With API, Admin Dashboard, And Customer
+              Android App.
+            </p>
+
+            <p>
+              Rust Forum - Forum web app written in Rust programming language.
+            </p>
+
+            <p>
+              Nuxtshop - Shopping website written in Nuxt.JS with Stripe payment
+              integration.
+            </p>
+
+            <p>
+              thedreambook.github.io - Technical web blog to share software
+              engineering knowledge.
+            </p>
+
+            <p>
+              Image Classification Model for Plastic Garbage - university
+              project on plastic waste image classification using the YOLOv7
+              with CIRA CORE program.
+            </p>
+          </div>
+
+          <!-- END PROJECTS LIST -->
+        </section>
+      </main>
+    </div>
+
+    <aside class="sidebar right-sidebar">
+      <!-- <h2>Web Only</h2>
+        <p>This content is also only visible on the website.</p>
+        <p>
+          You could put project links, a skills chart, or testimonials here.
+        </p> -->
+    </aside>
+  </body>
+</html>

@@ -1,0 +1,97 @@
+
+
+/* --- Global Styles --- */
+body {
+    background-color: #f0f2f5;
+    /* Light gray background for the web view */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+/* --- Web Layout (Screen) --- */
+
+/* * 1. Use Flexbox to create the 3-column layout.
+ * 'justify-content: center' keeps the A4 page in the middle.
+ */
+.page-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* * 2. Style the sidebars for web view.
+ * 'flex: 1' lets them grow to fill the extra space.
+ * 'max-width' prevents them from getting too wide on large screens.
+ */
+.sidebar {
+    flex: 1;
+    max-width: 300px;
+    /* background-color: #ffffff; */
+    padding: 20px;
+    /* border-radius: 8px; */
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+}
+
+/* * 3. Style the main A4 resume content.
+ * We fix the width to 21cm (A4 width).
+ * 'min-height' is 29.7cm (A4 height), but it can grow taller.
+ * The 'box-shadow' makes it look like a piece of paper on the web.
+ */
+.resume-content {
+    width: 21cm;
+    min-height: 29.7cm;
+    padding: 1cm;
+    /* Standard document margins */
+    background-color: #ffffff;
+    /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); */
+    /* box-sizing: border-box; */
+    /* Ensures padding is included in the width/height */
+}
+
+
+/* --- 🖨️ Print Styles --- */
+
+/* * This block ONLY applies when you print (or use "Print Preview").
+ */
+@media print {
+
+    /* * 1. Hide the sidebars.
+     * This is the key to your request.
+     */
+    .left-sidebar,
+    .right-sidebar {
+        display: none;
+    }
+
+    /* * 2. Reset the page for printing.
+     * Remove the gray background and any padding/margins from the body.
+     */
+    body {
+        background-color: #ffffff;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* * 3. Make the resume content fill the entire print page.
+     * We remove the web-only 'box-shadow' and 'min-height'.
+     * We set the width to 100% of the printable area.
+     * The padding/margins are handled by the @page rule.
+     */
+    .resume-content {
+        box-shadow: none;
+        width: 100%;
+        min-height: auto;
+        padding: 0;
+        /* Margins are set by @page */
+    }
+
+    /* * 4. Define the physical page size and margins for the printer.
+     * This tells the printer to format for A4.
+     */
+    @page {
+        size: A4;
+        margin: 1cm;
+        /* This matches the padding we used for the web view */
+    }
+}
