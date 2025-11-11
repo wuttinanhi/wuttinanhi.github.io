@@ -30,7 +30,7 @@
 
   /* 2. The sidebars (I added shadow/rounding back) */
   .sidebar {
-    @apply flex-1 max-w-[300px] p-5;
+    @apply flex-1 max-w-[11px] p-5;
     /* bg-white rounded-lg shadow-lg */
   }
 
