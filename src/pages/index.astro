@@ -1,8 +1,6 @@
 ---
-// import BaseHead from "../components/BaseHead.astro";
-// import Footer from "../components/Footer.astro";
-// import Header from "../components/Header.astro";
-// import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+import BaseHead from "../components/BaseHead.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 
 import "../styles/global.css";
 
@@ -12,10 +10,7 @@ import "../styles/print.css";
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Web and Print Resume</title>
-    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body>
     <div class="page-container">
@@ -80,7 +75,7 @@ import "../styles/print.css";
           <div class="mt-1.5">
             <div class="flex justify-between items-center text-blue-700">
               <p class="text-[1.0rem]">
-                Intern Software Tester and Software Developer Summit Computer
+                Intern Software Tester and Software Developer at Summit Computer
               </p>
               <p>16/01/2024 - 23/04/2024</p>
             </div>
@@ -92,11 +87,9 @@ import "../styles/print.css";
               </li>
               <li>
                 Developing a Java JSF Website Project coaching by Senior
-                Software Engineer, gaining hands
-              </li>
-              <li>
-                on experience in software development, code quality practices,
-                and problem-solving within a professional development team.
+                Software Engineer, gaining hands on experience in software
+                development, code quality practices, and problem-solving within
+                a professional development team.
               </li>
             </ul>
           </div>
@@ -104,30 +97,29 @@ import "../styles/print.css";
           <div class="mt-1.5">
             <div class="flex justify-between items-center text-blue-700">
               <p class="text-[1.0rem]">
-                Intern Web Development and IT Support Suan Dusit University
+                Intern Web Development and IT Support at Suan Dusit University
               </p>
               <p>1/4/2023 - 25/7/2023</p>
             </div>
 
             <ul>
               <li>
-                Website Maintenance and Content Management: Updated and
-                maintained the university’s WordPress website, ensuring accurate
-                and up-to-date information.
+                Updated and maintained the university's WordPress website,
+                ensuring accurate and up-to-date information.
               </li>
               <li>
                 Collaborated on implementing a new website design to improve
                 usability and visual appearance.
               </li>
               <li>
-                Technical Support: Provided IT support by diagnosing and
-                repairing computers, printers, and other devices. Resolved
-                hardware and software issues.
+                Provided IT support by diagnosing and repairing computers,
+                printers, and other devices. Resolved hardware and software
+                issues.
               </li>
               <li>
-                Administrative and Event Support: Assisted with general office
-                tasks and supported university events, contributing to smooth
-                operations and successful event execution.
+                Assisted with general office tasks and supported university
+                events, contributing to smooth operations and successful event
+                execution.
               </li>
             </ul>
           </div>
