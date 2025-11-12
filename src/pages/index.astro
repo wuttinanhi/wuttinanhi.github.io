@@ -1,64 +1,186 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Footer from "../components/Footer.astro";
-import Header from "../components/Header.astro";
-import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+// import BaseHead from "../components/BaseHead.astro";
+// import Footer from "../components/Footer.astro";
+// import Header from "../components/Header.astro";
+// import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+
 import "../styles/global.css";
+
+import "../styles/print.css";
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web and Print Resume</title>
+    <!-- <link rel="stylesheet" href="style.css" /> -->
   </head>
   <body>
-    <Header />
-    <main>
-      <h1>🧑‍🚀 Hello, Astronaut!</h1>
-      <p>
-        Welcome to the official <a href="https://astro.build/">Astro</a> blog starter
-        template. This template serves as a lightweight, minimally-styled starting
-        point for anyone looking to build a personal website, blog, or portfolio
-        with Astro.
-      </p>
-      <p>
-        This template comes with a few integrations already configured in your
-        <code>astro.config.mjs</code> file. You can customize your setup with
-        <a href="https://astro.build/integrations">Astro Integrations</a> to add
-        tools like Tailwind, React, or Vue to your project.
-      </p>
-      <p>Here are a few ideas on how to get started with the template:</p>
-      <ul>
-        <li>Edit this page in <code>src/pages/index.astro</code></li>
-        <li>
-          Edit the site header items in <code>src/components/Header.astro</code>
-        </li>
-        <li>
-          Add your name to the footer in <code>src/components/Footer.astro</code
-          >
-        </li>
-        <li>
-          Check out the included blog posts in <code>src/content/blog/</code>
-        </li>
-        <li>
-          Customize the blog post page layout in <code
-            >src/layouts/BlogPost.astro</code
-          >
-        </li>
-      </ul>
-      <p>
-        Have fun! If you get stuck, remember to
-        <a href="https://docs.astro.build/">read the docs</a>
-        or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-      </p>
-      <p>
-        Looking for a blog template with a bit more personality? Check out
-        <a href="https://github.com/Charca/astro-blog-template"
-          >astro-blog-template</a
-        >
-        by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-      </p>
-    </main>
-    <Footer />
+    <div class="page-container">
+      <aside class="sidebar left-sidebar">
+        <!-- <h2>Web Only</h2>
+        <p>This content is only visible on the website.</p>
+        <p>You could put navigation, links, or a profile picture here.</p> -->
+      </aside>
+
+      <main class="resume-content" id="a4-page">
+        <h1 class="text-3xl text-blue-600">WUTTINAN HANGLIM</h1>
+        <br />
+
+        <section>
+          <h2 class="text-header">Contact</h2>
+          <div>
+            <p class="text-[1rem]">
+              Address: Bukkhalo, Thonburi, Bangkok (10600) Thailand
+            </p>
+            <p class="text-[1rem]">E-mail: wuttinanwork@gmail.com</p>
+          </div>
+        </section>
+
+        <section class="mt-5">
+          <h2 class="text-header">Skills</h2>
+
+          <div>
+            <p class="text-[1rem]">
+              <span>Programming Languages:</span> Javascript, TypeScript, Python,
+              SQL, C#, Java, PHP, Python, Go, Rust
+            </p>
+            <p class="text-[1rem]">
+              <span>Frameworks:</span> React, Vue, Svelt, NextJS, Nuxt
+            </p>
+            <p class="text-[1rem]">
+              <span>Tools:</span>
+              Git, Github, Docker, VSCode, Jetbrains IDE, Terraform, Bash, Unity
+            </p>
+            <p class="text-[1rem]">
+              <span>Clouds:</span> Google Cloud Platform, Microsoft Azure, DigitalOcean,
+              CloudFlare
+            </p>
+            <p class="text-[1rem]">
+              <span>OS:</span> Windows 10/11, Ubuntu, Debian
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="text-header">Education</h2>
+          <p class="text-[1rem]">
+            Bachelor of Technology, Information of Technology.
+          </p>
+          <p>
+            Faculty of Science and Technology. Suan Dusit University. 2021-2024
+            (First-class honours) (GPA 3.77)
+          </p>
+        </section>
+
+        <section class="mt-5 mb-6">
+          <h2 class="text-header">Experiences</h2>
+          <div class="mt-1.5">
+            <div class="flex justify-between items-center text-blue-700">
+              <p class="text-[1.0rem]">
+                Intern Software Tester and Software Developer Summit Computer
+              </p>
+              <p>16/01/2024 - 23/04/2024</p>
+            </div>
+
+            <ul>
+              <li>
+                Web Testing on corporate product projects using internal testing
+                tools to ensure system functionality, accuracy, and reliability.
+              </li>
+              <li>
+                Developing a Java JSF Website Project coaching by Senior
+                Software Engineer, gaining hands
+              </li>
+              <li>
+                on experience in software development, code quality practices,
+                and problem-solving within a professional development team.
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-1.5">
+            <div class="flex justify-between items-center text-blue-700">
+              <p class="text-[1.0rem]">
+                Intern Web Development and IT Support Suan Dusit University
+              </p>
+              <p>1/4/2023 - 25/7/2023</p>
+            </div>
+
+            <ul>
+              <li>
+                Website Maintenance and Content Management: Updated and
+                maintained the university’s WordPress website, ensuring accurate
+                and up-to-date information.
+              </li>
+              <li>
+                Collaborated on implementing a new website design to improve
+                usability and visual appearance.
+              </li>
+              <li>
+                Technical Support: Provided IT support by diagnosing and
+                repairing computers, printers, and other devices. Resolved
+                hardware and software issues.
+              </li>
+              <li>
+                Administrative and Event Support: Assisted with general office
+                tasks and supported university events, contributing to smooth
+                operations and successful event execution.
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="text-header mb-2">Projects</h2>
+
+          <!-- START PROJECTS LIST -->
+          <div class="flex flex-col gap-y-1.5">
+            <a
+              href="https://github.com/wuttinanhi/car-parking-reservation-2025"
+              target="_blank"
+            >
+              Car Parking Reservation - Developed Python API, Admin dashboard
+              using React and Android App using React Native.
+            </a>
+
+            <a href="https://github.com/wuttinanhi/rust-forum" target="_blank">
+              Rust Forum - Forum web application written in Rust programming
+              language.
+            </a>
+
+            <a href="https://github.com/wuttinanhi/nuxtshop" target="_blank">
+              Nuxtshop - Shopping website written in NuxtJS. with Stripe payment
+              integration.
+            </a>
+
+            <a href="https://thedreambook.github.io/blog" target="_blank">
+              thedreambook.github.io - software engineering knowledge web blog.
+            </a>
+
+            <a
+              href="https://drive.google.com/file/d/1E0JKFAB-L133-zuL6iKxgbIDJqHAL84C/view?usp=sharing"
+              target="_blank"
+            >
+              Image Classification Model for Plastic Garbage - University
+              graduation project on plastic waste image classification model
+              using the YOLOv4 with CIRA CORE program.
+            </a>
+          </div>
+
+          <!-- END PROJECTS LIST -->
+        </section>
+      </main>
+    </div>
+
+    <aside class="sidebar right-sidebar">
+      <!-- <h2>Web Only</h2>
+        <p>This content is also only visible on the website.</p>
+        <p>
+          You could put project links, a skills chart, or testimonials here.
+        </p> -->
+    </aside>
   </body>
 </html>
