@@ -7,10 +7,6 @@
 /* @import "tailwindcss/preflight"; */
 /* @tailwind utilities; */
 
-/*
- * Base styles for raw HTML elements.
- * This is exactly what you had.
- */
 @layer base {
   body {
     @apply bg-[#f0f2f5] font-sans m-0 p-0;
@@ -28,13 +24,13 @@
     @apply flex justify-center gap-0 p-5;
   }
 
-  /* 2. The sidebars (I added shadow/rounding back) */
+  /* 2. The sidebars */
   .sidebar {
     @apply flex-1 p-0 w-0 max-w-0;
     /* bg-white rounded-lg shadow-lg */
   }
 
-  /* 3. The main A4 resume content (I added shadow back) */
+  /* 3. The main A4 resume content  */
   .resume-content {
     /* We use arbitrary values for exact print dimensions */
     @apply w-[21cm] min-h-[29.7cm] p-[0.8cm] bg-white;
@@ -49,29 +45,57 @@
     @apply text-blue-600 text-lg pr-2;
   }
 
+  .text-1 {
+    @apply text-sm;
+  }
+
+  .text-2 {
+    @apply text-xs;
+  }
+
+  .text-1-rem {
+    @apply text-[1rem];
+  }
+
   p {
     @apply text-sm;
   }
 
   ul {
-    @apply list-inside list-['-'];
+    @apply list-inside list-['-'] space-y-2 mt-2 mb-5; 
   }
 
   ul > li {
-    @apply pt-1.5 text-sm;
+    @apply text-sm;
+    /* pt-[1px] */
+  }
+
+  .ul-li-space-more-y {
+    @apply space-y-1.5;
+  }
+
+  ul > li > a {
+    @apply text-sm;
+    /* pt-[1px] */
   }
 
   a {
     @apply text-sm text-blue-800 underline;
   }
+
+  section {
+    @apply mt-3;
+  }
+
+
 }
 
 /* --- 🖨️ Print Styles --- */
-
 /* * This block ONLY applies when printing.
  * We use @apply inside it for the print-specific styles.
  */
 @media print {
+  .hide-on-print,
   .left-sidebar,
   .right-sidebar {
     /* 1. Hide the sidebars */
@@ -97,6 +121,6 @@
    */
   @page {
     size: A4;
-    margin: 1cm;
+    margin: 0.2cm;
   }
 }
