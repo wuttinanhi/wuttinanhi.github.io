@@ -1,0 +1,465 @@
+---
+import "../styles/global.css";
+import Navbar from "../components/Navbar.astro";
+
+
+const title = "Projects";
+const description = "Portfolio projects: Rust systems, Firecracker microVMs, CLI developer tools, and full-stack web applications.";
+
+interface Project {
+  title: string;
+  category: "systems" | "fullstack";
+  tagline: string;
+  description: string[];
+  techStack: string[];
+  githubUrl?: string;
+  badge?: string;
+  award?: string;
+}
+
+const projects: Project[] = [
+  // ================= SYSTEMS, DEVOPS & DEV TOOLS =================
+   {
+    title: "Fire Survival Game",
+    category: "fullstack",
+    tagline: "Multiplayer Disaster Evacuation Simulator",
+    description: [
+      "Multiplayer 3D emergency evacuation simulation developed to teach real-time survival and disaster response protocols under hazardous conditions.",
+      "Engineered networked client-server physics and state replication via Mirror Networking.",
+    ],
+    techStack: ["Unity", "C#", "Mirror Networking", "3D Physics"],
+    award: "2nd Prize Winner — DDPM National Competition",
+    githubUrl: "https://youtu.be/jF_XaidROFE",
+    badge: "GAME",
+  },
+   {
+    title: "docker-backup-tool-rs",
+    category: "systems",
+    tagline: "Automated Container & Volume State Archiver",
+    description: [
+      "High-speed CLI utility written in Rust to automate persistent volume snapshots, container metadata extraction, and safe state archiving.",
+    ],
+    techStack: ["Rust", "Docker API", "Compression", "CLI"],
+    githubUrl: "https://github.com/dreamoutbox/docker-backup-tool-rs",
+    badge: "TOOLS",
+  },
+   {
+    title: "my_config_cli",
+    category: "systems",
+    tagline: "Dotfiles & System Config Git Engine",
+    description: [
+      "Golang CLI utility to streamline synchronizing, versioning, symlinking, and restoring developer workstation configurations via Git.",
+    ],
+    techStack: ["Go", "Git Engine", "CLI", "Linux / macOS"],
+    githubUrl: "https://github.com/dreamoutbox/my_config_cli",
+    badge: "TOOLS",
+  },
+   {
+    title: "PgVisor",
+    category: "systems",
+    tagline: "PostgreSQL Cluster Supervisor & Monitor",
+    description: [
+      "Lightweight cluster management and health monitoring daemon written in Rust.",
+      "Provides real-time telemetry metrics, automated replication health checks, and an embedded operational web dashboard.",
+    ],
+    techStack: ["Rust", "PostgreSQL", "Embedded Web HUD", "Metrics"],
+    githubUrl: "https://github.com/dreamoutbox/pgvisor",
+    badge: "TOOLS",
+  },
+  {
+    title: "Crane",
+    category: "systems",
+    tagline: "Declarative VPS Deployment CLI",
+    description: [
+      "Zero-hassle deployment CLI allowing developers to deploy applications directly to VPS nodes from a single TOML manifest.",
+      "Automates PostgreSQL database provisioning, scheduled snapshot backups, Linux firewall (ufw/iptables) configuration, and domain DNS propagation.",
+    ],
+    techStack: ["Rust", "Go", "PostgreSQL", "Linux Firewall", "DNS APIs", "TOML"],
+    githubUrl: "https://github.com/dreamoutbox/crane",
+    badge: "TOOLS",
+  },
+  {
+    title: "Rust Playground Server",
+    category: "systems",
+    tagline: "Firecracker MicroVM Execution Sandbox",
+    description: [
+      "Hardened remote code execution daemon for compiling and executing arbitrary untrusted Rust code inside sub-second ephemeral MicroVMs.",
+      "Leverages AWS Firecracker with strict Linux cgroup limits, seccomp filters, and isolated network namespaces.",
+    ],
+    techStack: ["Rust", "AWS Firecracker", "Linux Virtualization", "Seccomp"],
+    githubUrl: "https://github.com/dreamoutbox/rust-playground-server",
+    badge: "WEBAPP",
+  },
+ 
+  {
+    title: "Rust LLDB MCP Server",
+    category: "systems",
+    tagline: "AI Agent Debugging Bridge via Model Context Protocol",
+    description: [
+      "Model Context Protocol (MCP) server wrapping native LLDB, enabling LLMs and AI coding assistants to step-debug, inspect memory, and analyze compiled binaries.",
+    ],
+    techStack: ["Rust", "LLDB", "Model Context Protocol (MCP)", "LLM Tools"],
+    githubUrl: "https://github.com/dreamoutbox/rust_lldb_mcp",
+    badge: "TOOLS",
+  },
+  {
+    title: "Crontext",
+    category: "systems",
+    tagline: "Natural Language to CRON Library Crate",
+    description: [
+      "Open-source Rust crate that parses human-readable schedule expressions ('every Monday at 4:30 AM') into standard POSIX CRON schedule strings.",
+    ],
+    techStack: ["Rust", "Crate", "AST Parser"],
+    githubUrl: "https://github.com/dreamoutbox/crontext",
+    badge: "LIBRARY",
+  },
+ 
+ // ====
+  {
+    title: "Apartment Management ERP",
+    category: "fullstack",
+    tagline: "Role-Based Property Operations Platform",
+    description: [
+      "Enterprise management system featuring 5 discrete role interfaces: Landlord, Facility Manager, Accountant, Maintenance Technician, and Tenant.",
+      "Automated recurrent billing pipelines generating downloadable PDF invoices and fiscal receipts dynamically via OpenPDF.",
+    ],
+    techStack: ["Java", "Spring Boot", "SQLite", "OpenPDF", "TailwindCSS"],
+    githubUrl: "https://github.com/dreamoutbox/java-apartment-management-system",
+    badge: "WEBAPP",
+  },
+  {
+    title: "QR Restaurant Management System",
+    category: "fullstack",
+    tagline: "Contactless Order Flow & Kitchen Pipeline",
+    description: [
+      "Dynamic table-side ordering platform allowing patrons to scan dynamic QR codes, with instant queue sync to kitchen display screens and waitstaff terminals.",
+    ],
+    techStack: ["Rust", "PostgreSQL", "WebSockets", "Responsive UI"],
+    githubUrl: "https://github.com/dreamoutbox/rust-restaurant-system",
+    badge: "WEBAPP",
+  },
+  {
+    title: "Go POS System",
+    category: "fullstack",
+    tagline: "High-Throughput Retail Point of Sale",
+    description: [
+      "Zero-latency point of sale terminal offering instant offline transaction logging, real-time inventory adjustments, and automated end-of-shift sales auditing.",
+    ],
+    techStack: ["Go", "SQLite", "Local-First Storage"],
+    githubUrl: "https://github.com/dreamoutbox/go-pos",
+    badge: "WEBAPP",
+  },
+  {
+    title: "NuxtShop E-Commerce",
+    category: "fullstack",
+    tagline: "Modern Headless Storefront",
+    description: [
+      "Full-stack e-commerce web storefront with real-time cart state synchronization, search filtering, and secure Stripe Checkout payment pipelines.",
+    ],
+    techStack: ["Nuxt.js", "Vue.js", "Stripe API", "TailwindCSS"],
+    githubUrl: "https://github.com/wuttinanhi/nuxtshop",
+    badge: "WEBAPP",
+  },
+  {
+    title: "Rust Web Forum",
+    category: "fullstack",
+    tagline: "High-Performance SSR Discussion Platform",
+    description: [
+      "Server-side rendered discussion board featuring threaded comments, user sessions, markdown rendering, and relational PostgreSQL persistence.",
+    ],
+    techStack: ["Rust", "Actix Web", "PostgreSQL", "Handlebars", "Bootstrap 5"],
+    githubUrl: "https://github.com/wuttinanhi/rust-forum",
+    badge: "WEBAPP",
+  },
+
+
+  // ================= FULL-STACK APPLICATIONS =================
+  {
+    title: "Theater Seat Booking System",
+    category: "fullstack",
+    tagline: "High-Concurrency Ticket Reservation Engine",
+    description: [
+      "Architected a concurrent ticket reservation engine in Rust with asynchronous workers preventing double-booking race conditions during seat holds.",
+      "Engineered end-to-end Stripe payment webhooks with automated transaction rollback, expiration sweeps, and invoice refunds.",
+    ],
+    techStack: ["Rust", "PostgreSQL", "Stripe API", "Async Workers", "Redis"],
+    githubUrl: "https://github.com/dreamoutbox/theater-seat-booking",
+    badge: "WEBAPP",
+  },
+  {
+    title: "Delivery App",
+    category: "fullstack",
+    tagline: "Hyper-responsive Hypermedia Delivery Dispatcher",
+    description: [
+      "Engineered a real-time multi-role logistics web platform featuring live dispatch dashboards for riders, merchant order queues, customer trackers, and admin oversight.",
+      "Built with Go and HTMX for instant server-driven UI reactivity without heavy client SPA bundles.",
+    ],
+    techStack: ["Go", "HTMX", "PostgreSQL", "S3", "TailwindCSS"],
+    githubUrl: "https://github.com/dreamoutbox/delivery-app",
+    badge: "WEBAPP",
+  },
+ 
+ 
+];
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth bg-[#07090e] text-slate-100 antialiased selection:bg-cyan-500/30 selection:text-cyan-200">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="relative min-h-screen overflow-x-hidden font-['Fira_Code',monospace]">
+    
+    <!-- Real-time ASCII Canvas Space Background -->
+    <canvas id="ascii-canvas" class="pointer-events-none fixed inset-0 z-0 h-full w-full opacity-65"></canvas>
+    
+    <!-- CRT Vignette & Subtle Scanline Grids -->
+    <div class="pointer-events-none fixed inset-0 z-[1] bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(7,9,14,0.8)_85%)]"></div>
+    <div class="pointer-events-none fixed inset-0 z-[1] bg-[linear-gradient(rgba(18,24,38,0)_50%,rgba(0,0,0,0.25)_50%)] bg-[length:100%_4px]"></div>
+
+    <Navbar/>
+
+    <!-- Main Content -->
+    <main class="relative z-10 mx-auto max-w-6xl px-6 pt-12 pb-24">
+      
+      <!-- Page Header & Filter HUD -->
+      <section class="border-b border-slate-800/80 pb-8">
+        <!-- <div class="mb-3 inline-flex items-center gap-2 rounded-full border border-cyan-500/30 bg-cyan-950/30 px-3 py-1 text-xs text-cyan-400">
+          <span>●</span>
+          <span>SYSTEM_CATALOG // REPOSITORIES & ARCHITECTURES</span>
+        </div> -->
+
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div>
+            <h1 class="text-3xl font-extrabold tracking-tight sm:text-5xl text-slate-100">
+             <span class="bg-gradient-to-r from-cyan-400 via-sky-300 to-indigo-400 bg-clip-text text-transparent">Projects</span> 
+            </h1>
+            <p class="mt-3 max-w-2xl text-xs sm:text-sm text-slate-400 leading-relaxed">
+              ---
+            </p>
+          </div>
+
+          <!-- Dynamic Filter Controls -->
+          <div class="flex items-center gap-2 p-1 rounded-lg border border-slate-800 bg-slate-950/70 backdrop-blur-sm">
+            <button
+              id="filter-all"
+              class="filter-btn active-filter rounded px-3 py-1.5 text-xs font-medium text-slate-200 transition"
+              data-filter="all"
+            >
+              ALL ({projects.length})
+            </button>
+            <button
+              id="filter-systems"
+              class="filter-btn rounded px-3 py-1.5 text-xs font-medium text-slate-400 hover:text-slate-200 transition"
+              data-filter="systems"
+            >
+              TOOLS
+            </button>
+            <button
+              id="filter-fullstack"
+              class="filter-btn rounded px-3 py-1.5 text-xs font-medium text-slate-400 hover:text-slate-200 transition"
+              data-filter="fullstack"
+            >
+              WEBAPP
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Grid -->
+      <section class="mt-10">
+        <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {projects.map((project) => (
+            <article
+              class="project-card group relative flex flex-col justify-between rounded-lg border border-slate-800/90 bg-[#090d16]/75 p-6 backdrop-blur-sm transition-all duration-200 hover:border-cyan-500/50 hover:bg-[#0c121e]/90 hover:shadow-[0_0_25px_rgba(6,182,212,0.12)]"
+              data-category={project.category}
+            >
+              <div>
+                <!-- Top metadata row -->
+                <div class="flex items-center justify-between gap-3 mb-3">
+                  <div class="flex items-center gap-2 font-mono text-[11px]">
+                    <!--  <span class="text-cyan-400 font-semibold">{project.category === "systems" ? "SYS_MODULE" : "WEB_APPLICATION"}</span> -->
+                    {project.badge && (
+                      <span class="rounded bg-cyan-950/60 border border-cyan-800/50 px-2 py-0.5 text-[10px] text-cyan-300">
+                        {project.badge}
+                      </span>
+                    )}
+                  </div>
+
+                  {project.githubUrl && (
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="flex items-center gap-1 text-[18px] font-mono text-slate-400 hover:text-cyan-300 transition-colors"
+                      title="Open GitHub Repository"
+                    >
+                      <span>github</span>
+                      <span class="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
+                    </a>
+                  )}
+                </div>
+
+                <!-- Award Highlight if applicable -->
+                {project.award && (
+                  <div class="mb-3 inline-flex items-center gap-2 rounded border border-amber-500/40 bg-amber-950/30 px-2.5 py-1 text-[11px] text-amber-300">
+                    <span>🏆</span>
+                    <span class="font-semibold">{project.award}</span>
+                  </div>
+                )}
+
+                <!-- Title & Tagline -->
+                <h2 class="text-lg font-bold text-slate-100 group-hover:text-cyan-300 transition-colors">
+                  {project.title}
+                </h2>
+                <div class="text-xs text-cyan-500/90 font-mono mt-0.5">
+                  &gt; {project.tagline}
+                </div>
+
+                <!-- Bullet descriptions -->
+                <ul class="mt-4 space-y-2 text-sm leading-relaxed text-slate-400">
+                  {project.description.map((point) => (
+                    <li class="flex items-start gap-2">
+                      <span class="text-cyan-400/80 select-none mt-0.5">›</span>
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <!-- Tech Stack Tags at bottom -->
+              <div class="mt-6 pt-4 border-t border-slate-800/60 flex flex-wrap gap-1.5">
+                {project.techStack.map((tech) => (
+                  <span class="rounded bg-slate-900 border border-slate-800 px-2 py-0.5 text-[10px] text-slate-400 group-hover:border-slate-700">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <!-- Bottom Terminal Command Prompt -->
+      <section class="mt-16 rounded-lg border border-dashed border-slate-800 p-6 text-center text-xs text-slate-500 font-mono">
+        <p>Looking for architecture breakdown?</p>
+        <p class="mt-1 text-slate-400">
+          Reach out via <a href="mailto:wuttinanwork@gmail.com" class="text-cyan-400 underline hover:text-cyan-300">wuttinanwork@gmail.com</a>.
+        </p>
+      </section>
+    </main>
+
+    <!-- Embedded Client Script -->
+    <script>
+      // ==========================================
+      // 1. Procedural ASCII Space Engine
+      // ==========================================
+      const canvas = document.getElementById('ascii-canvas') as HTMLCanvasElement;
+      const ctx = canvas?.getContext('2d');
+
+      if (canvas && ctx) {
+        let width = (canvas.width = window.innerWidth);
+        let height = (canvas.height = window.innerHeight);
+
+        const CHAR_SET = ['.', '·', '*', '+', '°', '✦', 'x'];
+        const STAR_COUNT = 130;
+
+        interface Star {
+          x: number;
+          y: number;
+          char: string;
+          opacity: number;
+          speed: number;
+        }
+
+        const stars: Star[] = Array.from({ length: STAR_COUNT }, () => ({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          char: CHAR_SET[Math.floor(Math.random() * CHAR_SET.length)],
+          opacity: Math.random() * 0.6 + 0.2,
+          speed: Math.random() * 0.25 + 0.05,
+        }));
+
+        window.addEventListener('resize', () => {
+          width = canvas.width = window.innerWidth;
+          height = canvas.height = window.innerHeight;
+        });
+
+        function render() {
+          if (!ctx) return;
+          ctx.clearRect(0, 0, width, height);
+          ctx.font = '12px "Fira Code", monospace';
+
+          for (let i = 0; i < stars.length; i++) {
+            const s = stars[i];
+            s.y += s.speed;
+            if (s.y > height) {
+              s.y = 0;
+              s.x = Math.random() * width;
+            }
+            ctx.fillStyle = `rgba(165, 243, 252, ${s.opacity})`;
+            ctx.fillText(s.char, s.x, s.y);
+          }
+
+          requestAnimationFrame(render);
+        }
+
+        render();
+      }
+
+      // ==========================================
+      // 2. Interactive Category Filter System
+      // ==========================================
+      const filterButtons = document.querySelectorAll<HTMLButtonElement>('.filter-btn');
+      const cards = document.querySelectorAll<HTMLElement>('.project-card');
+
+      filterButtons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const selected = btn.getAttribute('data-filter');
+
+          // Update active styles
+          filterButtons.forEach((b) => {
+            b.classList.remove('bg-cyan-950/60', 'text-cyan-300', 'border', 'border-cyan-500/40');
+            b.classList.add('text-slate-400');
+          });
+
+          btn.classList.remove('text-slate-400');
+          btn.classList.add('bg-cyan-950/60', 'text-cyan-300', 'border', 'border-cyan-500/40');
+
+          // Filter card visibility
+          cards.forEach((card) => {
+            const category = card.getAttribute('data-category');
+            if (selected === 'all' || category === selected) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // Default active styling on first button
+      const defaultBtn = document.getElementById('filter-all');
+      defaultBtn?.classList.add('bg-cyan-950/60', 'text-cyan-300', 'border', 'border-cyan-500/40');
+
+      // ==========================================
+      // 3. Mobile Navigation Menu
+      // ==========================================
+      const mobileBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      mobileBtn?.addEventListener('click', () => {
+        mobileMenu?.classList.toggle('hidden');
+      });
+    </script>
+  </body>
+</html>

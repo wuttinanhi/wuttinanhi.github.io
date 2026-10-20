@@ -1,0 +1,133 @@
+ 
+             // One-click clipboard copy
+      const copyBtn = document.getElementById("copy-email-btn");
+      const copyText = document.getElementById("copy-text");
+
+      copyBtn?.addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText("alex@rivera.dev");
+          if (copyText) {
+            copyText.textContent = "✓ copied to clipboard!";
+            setTimeout(() => {
+              copyText.textContent = "copy: alex@rivera.dev";
+            }, 2500);
+          }
+        } catch {
+          // Fallback if clipboard API is blocked
+        }
+      });
+
+      
+          <!-- <button
+            id="copy-email-btn"
+            class="inline-flex items-center gap-2 rounded border border-dashed border-slate-800 px-4 py-2.5 text-xs text-slate-400 transition hover:border-slate-600 hover:text-slate-200"
+          >
+            <span id="copy-text">copy: alex@rivera.dev</span>
+          </button> -->
+
+
+ <!-- TERMINAL RESUME MODAL -->
+    <div
+      id="resume-modal"
+      role="dialog"
+      aria-modal="true"
+      class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 p-4 backdrop-blur-md"
+    >
+      <div
+        class="relative w-full max-w-3xl rounded-lg border border-cyan-500/40 bg-[#090d16] shadow-2xl shadow-cyan-950/50"
+      >
+        <!-- Modal Window Bar -->
+        <div
+          class="flex items-center justify-between border-b border-cyan-950/80 bg-slate-950/80 px-4 py-2.5"
+        >
+          <div class="flex items-center gap-2">
+            <span class="h-3 w-3 rounded-full bg-rose-500/80"></span>
+            <span class="h-3 w-3 rounded-full bg-amber-500/80"></span>
+            <span class="h-3 w-3 rounded-full bg-emerald-500/80"></span>
+            <span class="ml-2 text-xs font-mono text-slate-400"
+              >resume_alex_rivera_2026.txt</span
+            >
+          </div>
+
+          <div class="flex items-center gap-3">
+            <button
+              id="download-resume-btn"
+              class="rounded bg-cyan-950/50 border border-cyan-800/50 px-2 py-0.5 text-[11px] text-cyan-300 hover:bg-cyan-900/50"
+            >
+              ↓ Download PDF
+            </button>
+            <button
+              id="close-modal-btn"
+              class="text-slate-400 hover:text-slate-100 font-mono text-sm px-1"
+              >✕</button
+            >
+          </div>
+        </div>
+
+        <!-- Terminal Content Body -->
+        <div
+          class="max-h-[75vh] overflow-y-auto p-6 text-xs leading-relaxed text-slate-300 space-y-6 font-mono"
+        >
+          <div>
+            <div class="text-cyan-400 font-bold text-sm">ALEX RIVERA</div>
+            <div class="text-slate-500">
+              Staff / Senior Distributed Systems & Frontend Engineer
+            </div>
+            <div class="text-slate-400">
+              Location: San Francisco, CA // alex@rivera.dev //
+              github.com/alexrivera
+            </div>
+          </div>
+
+          <div class="border-t border-slate-800 pt-4">
+            <div class="text-amber-400 font-semibold mb-2">
+              == EXPERIENCE ==
+            </div>
+            <div class="space-y-4">
+              <div>
+                <div class="flex justify-between text-slate-200">
+                  <span class="font-bold"
+                    >Lead Distributed Systems Engineer — OrbitCloud Corp</span
+                  >
+                  <span class="text-slate-500">2023 — Present</span>
+                </div>
+                <p class="text-slate-400 mt-1">
+                  Architected multi-region telemetry ingestion cluster handling
+                  450k req/sec with 99.99% uptime. Decreased cold-start query
+                  latencies by 64% using memory-mapped cache structures.
+                </p>
+              </div>
+
+              <div>
+                <div class="flex justify-between text-slate-200">
+                  <span class="font-bold"
+                    >Senior Full Stack Engineer — Helix Labs</span
+                  >
+                  <span class="text-slate-500">2020 — 2023</span>
+                </div>
+                <p class="text-slate-400 mt-1">
+                  Spearheaded developer tooling and browser visualization
+                  engines. Built edge-routing layer in Rust reducing CDN egress
+                  by $120k annually.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="border-t border-slate-800 pt-4">
+            <div class="text-amber-400 font-semibold mb-2">
+              == TECHNICAL CAPABILITIES ==
+            </div>
+            <p class="text-slate-400">
+              <strong class="text-slate-300">Languages:</strong> TypeScript, Go, Rust,
+              Python, SQL, C++<br />
+              <strong class="text-slate-300">Frameworks:</strong> Astro, React, Next.js,
+              Node.js, TailwindCSS<br />
+              <strong class="text-slate-300">Infrastructure:</strong> Docker, Kubernetes,
+              AWS, GCP, Redis, Kafka, Linux kernel tuning
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    

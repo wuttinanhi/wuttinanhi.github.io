@@ -1,236 +1,313 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
-
 import "../styles/global.css";
+import Navbar from "../components/Navbar.astro";
 
-import "../styles/print.css";
+// Page metadata & configuration
+const title = "WUTTINAN HANGLIM";
+const description = "WUTTINAN HANGLIM portfolio";
+
+// { label: "// 04.resume", href: "#resume", isAction: true },
+const techStack = [
+  "Rust",
+  "Go",
+  "TypeScript",
+  "JavaScript",
+  "Python",
+  "SQL",
+  "Bash",
+  "Java",
+  "C#",
+  "Docker",
+  "PostgreSQL",
+  "React",
+  "Vue",
+];
 ---
 
 <!doctype html>
-<html lang="en">
+<html
+  lang="en"
+  class="scroll-smooth bg-[#07090e] text-slate-100 antialiased selection:bg-cyan-500/30 selection:text-cyan-200"
+>
   <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body>
-    <div class="text-center mt-5 hide-on-print">
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=print"
-      />
+  <body
+    class="relative min-h-screen overflow-x-hidden font-['Fira_Code',monospace]"
+  >
+    <!-- Real-time ASCII Canvas Space Background -->
+    <canvas
+      id="ascii-canvas"
+      class="pointer-events-none fixed inset-0 z-0 h-full w-full opacity-70"
+    ></canvas>
 
-      <button
-        class="px-10 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300"
-        onclick="window.print()"
-      >
-        <span class="material-symbols-outlined align-bottom"> print </span>
-
-        Print this page
-      </button>
+    <!-- Subtle CRT Scanline & Radial Vignette Overlay -->
+    <div
+      class="pointer-events-none fixed inset-0 z-[1] bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(7,9,14,0.75)_80%)]"
+    >
+    </div>
+    <div
+      class="pointer-events-none fixed inset-0 z-[1] bg-[linear-gradient(rgba(18,24,38,0)_50%,rgba(0,0,0,0.25)_50%)] bg-[length:100%_4px]"
+    >
     </div>
 
-    <div>
-      <aside class="sidebar left-sidebar"></aside>
+    <Navbar />
 
-      <div class="page-container">
-        <main class="resume-content" id="a4-page">
-          <h1 class="text-3xl text-blue-600">WUTTINAN HANGLIM</h1>
+    <!-- Main Content Container -->
+    <main class="relative z-10 mx-auto max-w-6xl px-6 pt-16 pb-24">
+      <!-- HERO SECTION -->
+      <section id="home" class="flex min-h-[70vh] flex-col justify-center">
+        <!-- Main Headline -->
+        <h1
+          class="text-4xl font-extrabold tracking-tight sm:text-6xl lg:text-7xl"
+        >
+          WUTTINAN HANGLIM
+        </h1>
 
-          <!-- <hr class="text-blue-600 mt-5" /> -->
+        <!-- Subtext -->
+        <p
+          class="mt-6 max-w-2xl text-sm leading-relaxed text-slate-400 sm:text-base"
+        >
+          A <strong class="text-slate-200">Software Engineer</strong> with strong
+          expertise in backend systems,
+          <br /><br />
+          full-stack web development, and DevOps automation.
           <br />
+          creator of multiple developer tools.
+          <br /><br />
+          Proficient across Rust, Go, TypeScript, Python, and Java,
+          <br />
+          with deep hands-on experience in Linux infrastructure, PostgreSQL, Docker,
+          and Cloud.
+        </p>
 
-          <!-- START CONTACT -->
-          <section>
-            <h2 class="text-header">Contact</h2>
+        <!-- Tech Stack Ticker -->
+        <div class="mt-8 flex flex-wrap items-center gap-2">
+          <span class="mr-2 text-xs text-slate-500">SKILLS:</span>
+          {
+            techStack.map((tech) => (
+              <span class="rounded bg-slate-900/90 border border-slate-800/80 px-2.5 py-1 text-[11px] text-cyan-300/80">
+                {tech}
+              </span>
+            ))
+          }
+        </div>
 
-            <div>
-              <p class="text-1-rem">
-                Address: Bukkhalo, Thonburi, Bangkok (10600) Thailand
-              </p>
-              <p class="text-1-rem">E-mail: wuttinanwork@gmail.com</p>
-              <p class="text-1-rem">
-                GitHub: <a href="https://github.com/wuttinanhi" target="_blank">
-                  github.com/wuttinanhi
-                </a>
-              </p>
-            </div>
-          </section>
-          <!-- END CONTACT -->
+        <!-- CTAs -->
+        <div class="mt-8 flex flex-wrap items-center gap-4">
+          <a
+            href="/projects"
+            class="group inline-flex items-center gap-2 rounded bg-cyan-400 px-5 py-2.5 text-xs font-semibold text-slate-950 shadow-[0_0_20px_rgba(34,211,238,0.35)] transition-all hover:bg-cyan-300 hover:shadow-[0_0_30px_rgba(34,211,238,0.6)]"
+          >
+            <span>Explore Work</span>
+            <span class="transition-transform group-hover:translate-x-1">→</span
+            >
+          </a>
 
-          <!-- START SKILLS -->
-          <section>
-            <h2 class="text-header">Skills</h2>
+          <a
+            href="https://github.com/dreamoutbox"
+            target="_blank"
+            id="hero-resume-trigger"
+            class="inline-flex items-center gap-2 rounded border border-slate-700 bg-slate-900/60 px-5 py-2.5 text-xs font-medium text-slate-300 transition-all hover:border-cyan-500/50 hover:bg-slate-800/80 hover:text-cyan-300"
+          >
+            <span>GITHUB / DREAMOUTBOX</span>
+          </a>
 
-            <div>
-              <p class="text-1-rem">
-                <span>Programming Languages:</span> Javascript, TypeScript, Python,
-                SQL, C#, Java, PHP, Python, Go, Rust
-              </p>
-              <p class="text-1-rem">
-                <span>Frameworks:</span> React, Vue, Svelt, NextJS, Nuxt, Bootstrap
-              </p>
-              <p class="text-1-rem">
-                <span>Tools:</span>
-                Git, Github, Docker, VSCode, Jetbrains IDE, Terraform, Ansible, Bash,
-                Unity
-              </p>
-              <p class="text-1-rem">
-                <span>Clouds:</span> Google Cloud Platform, DigitalOcean, CloudFlare
-              </p>
-              <p class="text-1-rem">
-                <span>OS:</span> Windows, Debian-based Linux
-              </p>
-              <p class="text-1-rem">
-                <span>Languages:</span> Thai, English (TOEIC Listening 445 Reading
-                330 tested on 2023)
-              </p>
-            </div>
-          </section>
-          <!-- END SKILLS -->
+          <a
+            href="https://github.com/wuttinanhi"
+            target="_blank"
+            id="hero-resume-trigger"
+            class="inline-flex items-center gap-2 rounded border border-slate-700 bg-slate-900/60 px-5 py-2.5 text-xs font-medium text-slate-300 transition-all hover:border-cyan-500/50 hover:bg-slate-800/80 hover:text-cyan-300"
+          >
+            <span>GITHUB / WUTTINANHI</span>
+          </a>
 
-          <!-- START EDUCATION -->
-          <section>
-            <h2 class="text-header">Education</h2>
+          <a
+            href="/cv"
+            target="_blank"
+            id="hero-resume-trigger"
+            class="inline-flex items-center gap-2 rounded border border-slate-700 bg-slate-900/60 px-5 py-2.5 text-xs font-medium text-slate-300 transition-all hover:border-cyan-500/50 hover:bg-slate-800/80 hover:text-cyan-300"
+          >
+            <span>CV / Resume</span>
+            <!-- <span class="text-cyan-400">[⌕]</span> -->
+          </a>
 
-            <p class="text-1-rem">
-              Bachelor of Technology, Information of Technology. Suan Dusit
-              University.
-            </p>
+          <a
+            href="mailto:wuttinanwork@gmail.com"
+            id="hero-resume-trigger"
+            class="inline-flex items-center gap-2 rounded border border-slate-700 bg-slate-900/60 px-5 py-2.5 text-xs font-medium text-slate-300 transition-all hover:border-cyan-500/50 hover:bg-slate-800/80 hover:text-cyan-300"
+          >
+            <span>MAIL</span>
+          </a>
+        </div>
 
-            <p class="text-1">Faculty of Science and Technology. 2021-2024</p>
+        <!-- Live Telemetry Matrix Indicators -->
+        <div
+          class="mt-14 grid grid-cols-2 gap-4 border-t border-slate-800/80 pt-8 sm:grid-cols-4"
+        >
+          <div class="border-l-2 border-cyan-500/50 pl-3">
+            <div class="text-[11px] text-slate-500">// EXPERIENCE</div>
+            <div class="text-lg font-bold text-slate-200">2+ Years</div>
+          </div>
 
-            <p class="text-1">(First-class honours) (GPA 3.77)</p>
-          </section>
-          <!-- END EDUCATION -->
+          <!-- <div class="border-l-2 border-amber-500/50 pl-3">
+            <div class="text-[11px] text-slate-500">// LATENCY_P99</div>
+            <div class="text-lg font-bold text-slate-200">&lt; 14ms</div>
+          </div> -->
+        </div>
+      </section>
 
-          <!-- START EXPERIENCES -->
-          <section>
-            <h2 class="text-header">Experiences</h2>
+      <!-- BLOG PLACEHOLDER SECTION -->
+    </main>
 
-            <div class="mt-1.5">
-              <div class="text-blue-700">
-                <p class="text-1-rem">
-                  Intern Software Tester and Software Developer at Summit
-                  Computer Co., Ltd.
-                </p>
+    <!-- CLIENT SCRIPT (Astro automatically bundles this to the client) -->
+    <script>
+      // ==========================================
+      // 1. Procedural ASCII Space Engine (Canvas)
+      // ==========================================
+      const canvas = document.getElementById(
+        "ascii-canvas",
+      ) as HTMLCanvasElement;
+      const ctx = canvas.getContext("2d");
 
-                <p class="text-1">16/01/2024 - 23/04/2024</p>
-              </div>
+      if (ctx) {
+        let width = (canvas.width = window.innerWidth);
+        let height = (canvas.height = window.innerHeight);
 
-              <ul>
-                <li>
-                  &nbsp;Testing on corporate product projects using internal
-                  testing tools.
-                </li>
-                <li>
-                  &nbsp;Documenting test results to track software quality.
-                </li>
-                <li>
-                  &nbsp;Developing a Java JSF Website Project coaching by Senior
-                  Software Engineer.
-                </li>
-              </ul>
-            </div>
+        const CHAR_SET = [".", "·", "*", "+", "°", "✦", "x", "o"];
+        const STAR_COUNT = 160;
+        let isWarp = false;
 
-            <div class="mt-5">
-              <div class="text-blue-700">
-                <p class="text-1-rem">
-                  Intern Web Development and IT Support at Suan Dusit University
-                </p>
+        interface Star {
+          x: number;
+          y: number;
+          z: number;
+          char: string;
+          opacity: number;
+          speed: number;
+        }
 
-                <p class="text-1">1/4/2023 - 25/7/2023</p>
-              </div>
+        const stars: Star[] = Array.from({ length: STAR_COUNT }, () => ({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          z: Math.random() * 2 + 0.5,
+          char: CHAR_SET[Math.floor(Math.random() * CHAR_SET.length)],
+          opacity: Math.random() * 0.7 + 0.2,
+          speed: Math.random() * 0.4 + 0.1,
+        }));
 
-              <ul>
-                <li>
-                  Updated and maintained the university's WordPress website.
-                </li>
-                <li>
-                  Collaborated on implementing a new website design to improve
-                  usability and visual appearance.
-                </li>
-                <li>
-                  Provided IT support by diagnosing and repairing computers,
-                  printers, and other devices.
-                </li>
-                <li>
-                  Assisted with general office tasks and supported university
-                  events.
-                </li>
-              </ul>
-            </div>
-          </section>
-          <!-- END EXPERIENCES -->
+        // Detailed ASCII Saturn Planet Art
+        const saturnAscii = [
+          "           .---.           ",
+          "      --=-( *o* )=-=--     ",
+          "           '---'           ",
+        ];
 
-          <!-- START PROJECTS -->
-          <section>
-            <h2 class="text-header">Projects</h2>
+        window.addEventListener("resize", () => {
+          width = canvas.width = window.innerWidth;
+          height = canvas.height = window.innerHeight;
+        });
 
-            <!-- list-disc -->
-            <ul class="ul-li-space-more-y">
-              <li>
-                <a href="https://youtu.be/jF_XaidROFE" target="_blank">
-                  Fire Survival Game - Multiplayer Unity game about escaping a
-                  fire building (2nd Prize Winner).
-                </a>
-              </li>
+        const warpBtn = document.getElementById("warp-btn");
+        const warpLabel = document.getElementById("warp-label");
 
-              <li>
-                <a
-                  href="https://github.com/wuttinanhi/rust-forum"
-                  target="_blank"
-                >
-                  Rust Forum - Forum web application written in Rust programming
-                  language.
-                </a>
-              </li>
+        warpBtn?.addEventListener("click", () => {
+          isWarp = !isWarp;
+          if (warpLabel) {
+            warpLabel.innerText = isWarp ? "MAX" : "OFF";
+            warpLabel.className = isWarp ? "text-cyan-400" : "text-slate-300";
+          }
+        });
 
-              <li>
-                <a
-                  href="https://github.com/wuttinanhi/nuxtshop"
-                  target="_blank"
-                >
-                  Nuxtshop - Shopping website written in NuxtJS. with Stripe
-                  payment integration.
-                </a>
-              </li>
+        function render() {
+          if (!ctx) return;
+          ctx.clearRect(0, 0, width, height);
+          ctx.font = '13px "Fira Code", monospace';
 
-              <li>
-                <a href="https://thedreambook.github.io/blog" target="_blank">
-                  thedreambook.github.io - software engineering knowledge web
-                  blog.
-                </a>
-              </li>
+          // Render moving ASCII Starfield
+          const currentSpeedMultiplier = isWarp ? 14 : 1;
+          for (let i = 0; i < stars.length; i++) {
+            const star = stars[i];
+            star.y += star.speed * currentSpeedMultiplier;
 
-              <li>
-                <a
-                  href="https://github.com/wuttinanhi/car-parking-reservation-2025"
-                  target="_blank"
-                >
-                  Car Parking Reservation - Android App (React Native) for
-                  parking lot reservation.
-                </a>
-              </li>
+            if (star.y > height) {
+              star.y = 0;
+              star.x = Math.random() * width;
+            }
 
-              <li>
-                <a
-                  href="https://drive.google.com/drive/folders/1kHR4F8TNpIwp2yKbeCx9eDPKXGF12QZZ?usp=sharing"
-                  target="_blank"
-                >
-                  Image Classification Model for Plastic Garbage - Plastic type
-                  classifier model using the YOLOv4 with CIRA CORE. (University
-                  project)
-                </a>
-              </li>
-            </ul>
+            ctx.fillStyle = `rgba(165, 243, 252, ${star.opacity})`;
+            ctx.fillText(star.char, star.x, star.y);
+          }
 
-            <!-- <div class="flex flex-col gap-y-1"></div> -->
-          </section>
-          <!-- END PROJECTS -->
-        </main>
-      </div>
+          // Render background ASCII Saturn in upper right
+          ctx.fillStyle = "rgba(103, 232, 249, 0.25)";
+          const planetStartX = Math.max(width - 320, 40);
+          const planetStartY = 110;
+          saturnAscii.forEach((line, index) => {
+            ctx.fillText(line, planetStartX, planetStartY + index * 16);
+          });
 
-      <aside class="sidebar right-sidebar"></aside>
-    </div>
+          requestAnimationFrame(render);
+        }
+
+        render();
+      }
+
+      // ==========================================
+      // 2. Interactive Resume Modal Handling
+      // ==========================================
+      const modal = document.getElementById("resume-modal");
+      const openBtn = document.getElementById("open-resume-btn");
+      const openBtnMobile = document.getElementById("open-resume-btn-mobile");
+      // const heroResumeTrigger = document.getElementById("hero-resume-trigger");
+      const closeBtn = document.getElementById("close-modal-btn");
+
+      const openModal = () => modal?.classList.remove("hidden"),
+        modalClasses = modal?.classList.add("flex");
+      const closeModal = () => {
+        modal?.classList.add("hidden");
+        modal?.classList.remove("flex");
+      };
+
+      //heroResumeTrigger
+      [openBtn, openBtnMobile].forEach((btn) =>
+        btn?.addEventListener("click", () => {
+          modal?.classList.remove("hidden");
+          modal?.classList.add("flex");
+        }),
+      );
+
+      closeBtn?.addEventListener("click", closeModal);
+
+      // Close modal on backdrop click or Escape key
+      modal?.addEventListener("click", (e) => {
+        if (e.target === modal) closeModal();
+      });
+
+      window.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && !modal?.classList.contains("hidden")) {
+          closeModal();
+        }
+      });
+
+      // ==========================================
+      // 3. Mobile Navigation & Utility Handlers
+      // ==========================================
+      const mobileBtn = document.getElementById("mobile-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      mobileBtn?.addEventListener("click", () => {
+        mobileMenu?.classList.toggle("hidden");
+      });
+    </script>
   </body>
 </html>
