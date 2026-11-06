@@ -1,0 +1,131 @@
+---
+import "../styles/global.css";
+import Cv from "./Cv.astro";
+import Resume from "./Resume.astro";
+
+---
+
+<!-- Screen-only Floating Action Bar -->
+    <header
+      class="no-print sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 py-2.5 px-4 shadow-xs"
+    >
+      <div class="max-w-4xl mx-auto flex items-center justify-between gap-3">
+        <!-- Left: Status Indicator -->
+        <div class="flex items-center gap-2 flex-1 min-w-0">
+          <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500 shrink-0"></span>
+          <span id="preview-label" class="font-semibold text-slate-800 text-sm truncate">
+            CV Preview
+          </span>
+        </div>
+
+        <!-- Center: Document Switcher Toggle -->
+        <div class="flex justify-center shrink-0">
+          <nav
+            class="inline-flex items-center bg-slate-100 p-1 rounded-lg border border-slate-200 text-xs"
+            aria-label="Document view switcher"
+          >
+            <a
+              id="tab-cv"
+              href="#cv"
+              class="px-4 py-1 rounded-md transition-all font-semibold bg-white text-slate-900 shadow-xs"
+            >
+              CV
+            </a>
+            <a
+              id="tab-resume"
+              href="#resume"
+              class="px-4 py-1 rounded-md transition-all text-slate-600 hover:text-slate-900 font-medium"
+            >
+              Resume
+            </a>
+          </nav>
+        </div>
+
+        <!-- Right: Print Action -->
+        <div class="flex items-center justify-end gap-2 flex-1 shrink-0">
+          <button
+            id="print-btn"
+            type="button"
+            class="cursor-pointer inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-white hover:bg-slate-800 transition active:scale-95"
+          >
+            <svg
+              class="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2m-12 0v4h12v-4M8 14h8"
+              ></path>
+            </svg>
+            Print
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Document Views -->
+    <main>
+      <div id="cv-view">
+        <Cv />
+      </div>
+      <div id="resume-view" class="hidden">
+        <Resume />
+      </div>
+    </main>
+
+    <!-- Client-side Routing and Print Script -->
+    <script>
+      const tabCv = document.getElementById("tab-cv");
+      const tabResume = document.getElementById("tab-resume");
+      const cvView = document.getElementById("cv-view");
+      const resumeView = document.getElementById("resume-view");
+      const previewLabel = document.getElementById("preview-label");
+      const printBtn = document.getElementById("print-btn");
+
+      const activeClasses = ["bg-white", "text-slate-900", "shadow-xs", "font-semibold"];
+      const inactiveClasses = ["text-slate-600", "hover:text-slate-900", "font-medium"];
+
+      function syncView() {
+        const isResume = window.location.hash.toLowerCase() === "#resume";
+
+        if (isResume) {
+          cvView?.classList.add("hidden");
+          resumeView?.classList.remove("hidden");
+
+          tabCv?.classList.remove(...activeClasses);
+          tabCv?.classList.add(...inactiveClasses);
+          tabCv?.removeAttribute("aria-current");
+
+          tabResume?.classList.remove(...inactiveClasses);
+          tabResume?.classList.add(...activeClasses);
+          tabResume?.setAttribute("aria-current", "page");
+
+          if (previewLabel) previewLabel.textContent = "Resume Preview";
+        } else {
+          resumeView?.classList.add("hidden");
+          cvView?.classList.remove("hidden");
+
+          tabResume?.classList.remove(...activeClasses);
+          tabResume?.classList.add(...inactiveClasses);
+          tabResume?.removeAttribute("aria-current");
+
+          tabCv?.classList.remove(...inactiveClasses);
+          tabCv?.classList.add(...activeClasses);
+          tabCv?.setAttribute("aria-current", "page");
+
+          if (previewLabel) previewLabel.textContent = "CV Preview";
+        }
+      }
+
+      // Sync on page load and on back/forward or hash change
+      window.addEventListener("hashchange", syncView);
+      syncView();
+
+      printBtn?.addEventListener("click", () => {
+        window.print();
+      });
+    </script>

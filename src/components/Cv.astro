@@ -1,0 +1,609 @@
+---
+import "../styles/global.css";
+
+interface ProjectItem {
+  name: string;
+  badge?: string;
+  stack: string;
+  link: string;
+  linkText: string;
+  description: string;
+}
+
+const systemsProjects: ProjectItem[] = [
+  {
+    name: "Crane — Declarative VPS Deployment CLI",
+    stack: "Rust/Go, PostgreSQL, Linux Firewall, DNS APIs, TOML",
+    link: "https://github.com/dreamoutbox/crane",
+    linkText: "github.com/dreamoutbox/crane",
+    description:
+      "Built a zero-hassle deployment CLI tool allowing developers to deploy applications directly to VPS servers from a single TOML configuration file. Automated PostgreSQL database provisioning, scheduled backups, Linux firewall configuration, and domain DNS record management.",
+  },
+  {
+    name: "Rust Playground Server (MicroVM Sandbox)",
+    stack: "Rust, AWS Firecracker MicroVM, Linux Virtualization",
+    link: "https://github.com/dreamoutbox/rust-playground-server",
+    linkText: "github.com/dreamoutbox/rust-playground-server",
+    description:
+      "Engineered a secure remote code execution server for compiling and running untrusted Rust code inside isolated AWS Firecracker MicroVMs.",
+  },
+  {
+    name: "PgVisor — PostgreSQL Cluster Supervisor",
+    stack: "Rust, PostgreSQL, Web Dashboard",
+    link: "https://github.com/dreamoutbox/pgvisor",
+    linkText: "github.com/dreamoutbox/pgvisor",
+    description:
+      "Developed a lightweight PostgreSQL cluster management and monitoring supervisor in Rust featuring a user-friendly web dashboard for operational visibility.",
+  },
+  {
+    name: "Rust LLDB MCP Server",
+    stack: "Rust, LLDB, Model Context Protocol (MCP)",
+    link: "https://github.com/dreamoutbox/rust_lldb_mcp",
+    linkText: "github.com/dreamoutbox/rust_lldb_mcp",
+    description:
+      "Created a Model Context Protocol (MCP) server wrapping the LLDB debugger, enabling AI assistants and LLM agents to interactively inspect, debug, and analyze compiled binaries.",
+  },
+  {
+    name: "Crontext — Human Natural Language to CRON Library",
+    stack: "Rust (Library Crate)",
+    link: "https://github.com/dreamoutbox/crontext",
+    linkText: "github.com/dreamoutbox/crontext",
+    description:
+      "Published a reusable Rust crate that parses human-readable schedule expressions into standard CRON syntax.",
+  },
+  {
+    name: "Docker Volume Backup Tool",
+    stack: "Tools (Rust)",
+    link: "https://github.com/dreamoutbox/docker-backup-tool-rs",
+    linkText: "github.com/dreamoutbox/docker-backup-tool-rs",
+    description:
+      "Built a fast CLI utility in Rust for automating Docker volume and container state backups.",
+  },
+  {
+    name: "myconfig CLI",
+    stack: "Tools (Go)",
+    link: "https://github.com/dreamoutbox/my_config_cli",
+    linkText: "github.com/dreamoutbox/my_config_cli",
+    description:
+      "Developed a Golang CLI tool to streamline backing up, versioning, and restoring system configuration files via Git.",
+  },
+];
+
+const fullStackProjects: ProjectItem[] = [
+  {
+    name: "Fire Survival Game",
+    badge: "2nd Prize Winner",
+    stack: "Unity, C#, Mirror Networking",
+    link: "https://youtu.be/jF_XaidROFE",
+    linkText: "youtu.be/jF_XaidROFE",
+    description:
+      "Awarded 2nd Prize in a national competition organized by the Department of Disaster Prevention and Mitigation (DDPM) for creating a multiplayer 3D emergency evacuation simulation game.",
+  },
+  {
+    name: "Theater Seat Booking System",
+    stack: "Rust, PostgreSQL, Stripe API, Background Workers",
+    link: "https://github.com/dreamoutbox/theater-seat-booking",
+    linkText: "github.com/dreamoutbox/theater-seat-booking",
+    description:
+      "Architected a concurrent ticket reservation platform in Rust using asynchronous background workers to handle seat locks and prevent double-booking. Integrated full Stripe payment lifecycle flows, including checkout sessions, automated cancellations, and payment refunds.",
+  },
+  {
+    name: "QR Restaurant Management System",
+    stack: "Rust, PostgreSQL",
+    link: "https://github.com/dreamoutbox/rust-restaurant-system",
+    linkText: "github.com/dreamoutbox/rust-restaurant-system",
+    description:
+      "Developed an end-to-end restaurant ordering system enabling customers to scan table QR codes to place orders, paired with real-time order management dashboards for waitstaff and kitchen teams.",
+  },
+  {
+    name: "Apartment Management ERP",
+    stack: "Java, Spring Boot, Thymeleaf, SQLite, OpenPDF",
+    link: "https://github.com/dreamoutbox/java-apartment-management-system",
+    linkText: "github.com/dreamoutbox/java-apartment-management-system",
+    description:
+      "Engineered a property management system using modular, reusable UI components tailored across 5 role-based views (Landlord, Manager, Accountant, Technician, Tenant). Implemented automated billing workflows that dynamically generate downloadable PDF invoices and receipts using OpenPDF.",
+  },
+  {
+    name: "Go Point-of-Sale (POS) System",
+    stack: "Go, SQLite",
+    link: "https://github.com/dreamoutbox/go-pos",
+    linkText: "github.com/dreamoutbox/go-pos",
+    description:
+      "Created a fast retail Point-of-Sale system featuring real-time inventory tracking, stock management, and automated sales reporting.",
+  },
+  {
+    name: "Delivery App Website",
+    stack: "Go, HTMX, PostgreSQL, S3 Object Storage",
+    link: "https://github.com/dreamoutbox/delivery-app",
+    linkText: "github.com/dreamoutbox/delivery-app",
+    description:
+      "Built a responsive logistics and delivery web application using Go and HTMX, featuring tailored real-time operational dashboards for merchants, riders, customers, and administrators, backed by PostgreSQL and S3 storage.",
+  },
+  {
+    name: "NuxtShop E-Commerce",
+    stack: "Nuxt.js, Vue.js, and Stripe API",
+    link: "https://github.com/wuttinanhi/nuxtshop",
+    linkText: "github.com/wuttinanhi/nuxtshop",
+    description: "Full-stack e-commerce storefront with Stripe integration.",
+  },
+  {
+    name: "Rust Forum",
+    stack: "Rust, Actix Web, PostgreSQL, Handlebars, and Bootstrap 5",
+    link: "https://github.com/wuttinanhi/rust-forum",
+    linkText: "github.com/wuttinanhi/rust-forum",
+    description: "Server-side rendered forum. with users, posts, comments features",
+  },
+];
+---
+
+<!-- Main CV Paper Sheet -->
+<main
+  class="cv-page-container max-w-[210mm] mx-auto my-0 sm:my-8 bg-white p-6 sm:p-12 text-slate-800"
+>
+  <!-- HEADER / PROFILE -->
+  <section class="border-b border-slate-200 pb-5 mb-5">
+    <h1
+      class="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 uppercase"
+    >
+      Wuttinan Hanglim
+    </h1>
+    <p class="text-sm sm:text-base font-semibold text-slate-700 mt-1">
+      Full-Stack & Systems Software Engineer <span
+        class="text-slate-500 font-normal">(Rust, Go, TypeScript & DevOps)</span
+      >
+    </p>
+
+    <!-- Contact Links Grid -->
+    <div class="mt-3 flex flex-wrap gap-x-4 gap-y-1.5 text-xs text-slate-600">
+      <span class="inline-flex items-center gap-1.5">
+        <svg
+          class="w-3.5 h-3.5 text-slate-400 no-print"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+          ></path>
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+          ></path>
+        </svg>
+        Thonburi, Bangkok 10600, Thailand
+      </span>
+      <span class="inline-flex items-center gap-1.5">
+        <svg
+          class="w-3.5 h-3.5 text-slate-400 no-print"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+          ></path>
+        </svg>
+        <a
+          href="mailto:wuttinanwork@gmail.com"
+          class="hover:text-slate-900 underline underline-offset-2"
+          >wuttinanwork@gmail.com</a
+        >
+      </span>
+      <span class="inline-flex items-center gap-1.5">
+        <a
+          href="https://www.linkedin.com/in/wuttinanhanglim"
+          target="_blank"
+          rel="noreferrer"
+          class="hover:text-slate-900 underline underline-offset-2"
+          >linkedin.com/in/wuttinanhanglim</a
+        >
+      </span>
+      <span class="inline-flex items-center gap-1.5">
+        <span>GitHub:</span>
+        <a
+          href="https://github.com/dreamoutbox"
+          target="_blank"
+          rel="noreferrer"
+          class="hover:text-slate-900 underline underline-offset-2"
+          >dreamoutbox</a
+        >
+        <span class="text-slate-400">/</span>
+        <a
+          href="https://github.com/wuttinanhi"
+          target="_blank"
+          rel="noreferrer"
+          class="hover:text-slate-900 underline underline-offset-2"
+          >wuttinanhi</a
+        >
+      </span>
+      <span class="inline-flex items-center gap-1.5">
+        <svg
+          class="w-3.5 h-3.5 text-slate-400 no-print"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
+          ></path>
+        </svg>
+        <a
+          href="https://thedreambook.github.io"
+          target="_blank"
+          rel="noreferrer"
+          class="hover:text-slate-900 underline underline-offset-2"
+          >thedreambook.github.io</a
+        >
+      </span>
+    </div>
+  </section>
+
+  <!-- PROFESSIONAL SUMMARY -->
+  <section class="mb-5 print-break-inside-avoid">
+    <h2
+      class="text-xs uppercase font-bold tracking-wider text-slate-500 border-b border-slate-200 pb-1 mb-2"
+    >
+      Professional Summary
+    </h2>
+    <p class="text-xs sm:text-[13px] leading-relaxed text-slate-700">
+      Software Engineer with a First-Class Honors degree in Information
+      Technology and strong expertise in backend systems, full-stack web
+      development, and DevOps automation. Open-source contributor to the Rust
+      ecosystem (<code class="font-mono text-slate-800 font-semibold"
+        >deadpool-rs</code
+      >) and creator of multiple developer tools, including a Firecracker MicroVM
+      Rust code execution server, a Rust LLDB MCP server, a PostgreSQL cluster
+      setup and management tool, and an automated VPS deployment CLI. Proficient
+      across <strong class="font-semibold text-slate-900"
+        >Rust, Go, TypeScript, Python, and Java (Spring Boot)</strong
+      >, with hands-on experience in <strong class="font-semibold text-slate-900"
+        >PostgreSQL, Docker, Linux infrastructure, and cloud administration</strong
+      >.
+    </p>
+  </section>
+
+  <!-- TECHNICAL SKILLS -->
+  <section class="mb-5 print-break-inside-avoid">
+    <h2
+      class="text-xs uppercase font-bold tracking-wider text-slate-500 border-b border-slate-200 pb-1 mb-2.5"
+    >
+      Technical Skills
+    </h2>
+    <div class="space-y-1.5 text-xs">
+      <div class="grid grid-cols-1 sm:grid-cols-12 gap-1">
+        <span class="sm:col-span-3 font-semibold text-slate-800"
+          >Programming Languages:</span
+        >
+        <span class="sm:col-span-9 text-slate-700">
+          Rust, Go, TypeScript, JavaScript, Python, SQL, Bash, Java, C#, PHP
+        </span>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-12 gap-1">
+        <span class="sm:col-span-3 font-semibold text-slate-800"
+          >Backend & Systems:</span
+        >
+        <span class="sm:col-span-9 text-slate-700">
+          Rust (Actix, Axum), Go (Gin, Gorm), Spring Boot, Node.js, REST APIs
+        </span>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-12 gap-1">
+        <span class="sm:col-span-3 font-semibold text-slate-800"
+          >Frontend & UI:</span
+        >
+        <span class="sm:col-span-9 text-slate-700">
+          React, Next.js, Vue.js, Nuxt.js, Svelte, React Native, Bootstrap 5,
+          TailwindCSS, PrimeFaces
+        </span>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-12 gap-1">
+        <span class="sm:col-span-3 font-semibold text-slate-800"
+          >Databases & Storage:</span
+        >
+        <span class="sm:col-span-9 text-slate-700">
+          PostgreSQL, MySQL, SQLite, S3-Object Storage
+        </span>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-12 gap-1">
+        <span class="sm:col-span-3 font-semibold text-slate-800"
+          >DevOps & Cloud:</span
+        >
+        <span class="sm:col-span-9 text-slate-700">
+          Docker, Terraform, Ansible, Linux Server Administration, GCP,
+          DigitalOcean, Cloudflare, Git
+        </span>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-12 gap-1">
+        <span class="sm:col-span-3 font-semibold text-slate-800"
+          >Testing & Tools:</span
+        >
+        <span class="sm:col-span-9 text-slate-700">Playwright, Selenium</span>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-12 gap-1">
+        <span class="sm:col-span-3 font-semibold text-slate-800">Others:</span>
+        <span class="sm:col-span-9 text-slate-700"
+          >Stripe API, Unity (Mirror Networking)</span
+        >
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-12 gap-1">
+        <span class="sm:col-span-3 font-semibold text-slate-800"
+          >Spoken Languages:</span
+        >
+        <span class="sm:col-span-9 text-slate-700">
+          Thai (Native), English (TOEIC: 775 — Listening: 445, Reading: 330,
+          tested on 2023)
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK EXPERIENCE -->
+  <section class="mb-5">
+    <h2
+      class="text-xs uppercase font-bold tracking-wider text-slate-500 border-b border-slate-200 pb-1 mb-3"
+    >
+      Work Experience
+    </h2>
+
+    <!-- Role 1 -->
+    <article class="mb-4 print-break-inside-avoid">
+      <div class="flex flex-wrap justify-between items-baseline gap-1">
+        <h3 class="text-xs sm:text-sm font-bold text-slate-900">
+          Independent Software Engineer & Open-Source Contributor
+        </h3>
+        <span class="text-xs font-medium text-slate-500 font-mono"
+          >May 2024 – Present</span
+        >
+      </div>
+      <div class="text-xs font-semibold text-slate-700 mb-1.5">
+        Self-Directed / Open Source <span class="font-normal text-slate-500"
+          >— Bangkok, Thailand</span
+        >
+      </div>
+      <ul
+        class="list-disc list-outside ml-4 space-y-1 text-xs text-slate-700 leading-normal"
+      >
+        <li>
+          <strong class="font-semibold text-slate-900"
+            >Open-Source Contributions (<code class="font-mono">deadpool-rs</code
+            >):</strong
+          > Contributed merged pull requests to the <code class="font-mono"
+            >deadpool</code
+          > Rust connection pool ecosystem, resolving DevContainer startup failures,
+          optimizing Docker build caching via <code class="font-mono"
+            >.dockerignore</code
+          > and <code class="font-mono">postCreateCommand</code> restructuring (<a
+            href="https://github.com/deadpool-rs/deadpool/pull/477"
+            target="_blank"
+            rel="noreferrer"
+            class="underline hover:text-slate-900">#477</a
+          >), and fixing macro visibility by exporting <code class="font-mono"
+            >QueueMode</code
+          > in <code class="font-mono">managed_reexports</code> (<a
+            href="https://github.com/deadpool-rs/deadpool/pull/478"
+            target="_blank"
+            rel="noreferrer"
+            class="underline hover:text-slate-900">#478</a
+          >).
+        </li>
+        <li>
+          <strong class="font-semibold text-slate-900"
+            >Infrastructure & DevOps Tooling:</strong
+          > Architected and open-sourced multiple systems tools in Rust and Go, including
+          a declarative TOML-based VPS deployment CLI (<code class="font-mono"
+            >crane</code
+          >), a web-based PostgreSQL cluster supervisor (<code class="font-mono"
+            >pgvisor</code
+          >), and a sandboxed Rust code execution server powered by AWS
+          Firecracker MicroVMs.
+        </li>
+        <li>
+          <strong class="font-semibold text-slate-900"
+            >Full-Stack System Architecture:</strong
+          > Designed and built end-to-end transactional applications across Rust,
+          Go, and Java Spring Boot, implementing background job workers, Stripe payment
+          lifecycles (webhooks, refunds, cancellations), multi-role dashboards, and
+          QR-based ordering workflows.
+        </li>
+        <li>
+          <strong class="font-semibold text-slate-900">Technical Writing:</strong>
+          Author and maintain <a
+            href="https://thedreambook.github.io"
+            target="_blank"
+            rel="noreferrer"
+            class="underline hover:text-slate-900 font-semibold"
+            >The Dream Book</a
+          >, an open-access engineering blog documenting systems programming,
+          backend architecture, and DevOps practices.
+        </li>
+      </ul>
+    </article>
+
+    <!-- Role 2 -->
+    <article class="mb-4 print-break-inside-avoid">
+      <div class="flex flex-wrap justify-between items-baseline gap-1">
+        <h3 class="text-xs sm:text-sm font-bold text-slate-900">
+          Software Developer & QA Tester Intern
+        </h3>
+        <span class="text-xs font-medium text-slate-500 font-mono"
+          >Jan 2024 – Apr 2024</span
+        >
+      </div>
+      <div class="text-xs font-semibold text-slate-700 mb-1.5">
+        Summit Computer Co., Ltd. <span class="font-normal text-slate-500"
+          >— Bangkok, Thailand</span
+        >
+      </div>
+      <ul
+        class="list-disc list-outside ml-4 space-y-1 text-xs text-slate-700 leading-normal"
+      >
+        <li>
+          Executed manual and automated quality assurance testing for a
+          large-scale government web system using an internal Java and Selenium
+          testing framework.
+        </li>
+        <li>
+          Documented software defects, tracked test coverage, and collaborated
+          with engineering teams to ensure compliance with strict government
+          project specifications.
+        </li>
+        <li>
+          Built a full-stack web application module using JavaServer Faces
+          (JSF), PrimeFaces, and PostgreSQL under the direct mentorship of a
+          Senior Software Engineer.
+        </li>
+      </ul>
+    </article>
+
+    <!-- Role 3 -->
+    <article class="print-break-inside-avoid">
+      <div class="flex flex-wrap justify-between items-baseline gap-1">
+        <h3 class="text-xs sm:text-sm font-bold text-slate-900">
+          Web Developer & IT Support Intern
+        </h3>
+        <span class="text-xs font-medium text-slate-500 font-mono"
+          >Apr 2023 – Jul 2023</span
+        >
+      </div>
+      <div class="text-xs font-semibold text-slate-700 mb-1.5">
+        Suan Dusit University <span class="font-normal text-slate-500"
+          >— Bangkok, Thailand</span
+        >
+      </div>
+      <ul
+        class="list-disc list-outside ml-4 space-y-1 text-xs text-slate-700 leading-normal"
+      >
+        <li>
+          Workflow Automation: Automated bulk directory updates for the
+          university website by surveying faculty via Google Forms and writing a
+          Python script to programmatically generate and deploy HTML content.
+        </li>
+        <li>
+          Collaborated on redesigning the university's WordPress web portal to
+          modernize the UI and improve navigation usability.
+        </li>
+        <li>
+          Provided hardware, network, and software troubleshooting for faculty
+          workstations, printers, and university-wide events.
+        </li>
+      </ul>
+    </article>
+  </section>
+
+  <!-- SYSTEMS, DEVOPS & DEVELOPER TOOLS -->
+  <section class="mb-5">
+    <h2
+      class="text-xs uppercase font-bold tracking-wider text-slate-500 border-b border-slate-200 pb-1 mb-3"
+    >
+      Systems, DevOps & Developer Tools
+    </h2>
+
+    <div class="space-y-3">
+      {
+        systemsProjects.map((project) => (
+          <div class="print-break-inside-avoid">
+            <div class="flex flex-wrap justify-between items-baseline gap-1">
+              <h3 class="text-xs sm:text-sm font-bold text-slate-900 inline-flex items-center gap-1.5">
+                <span>{project.name}</span>
+                {project.badge && (
+                  <span class="inline-block px-1.5 py-0.5 text-[10px] font-medium text-slate-600 bg-slate-100 border border-slate-200 rounded">
+                    {project.badge}
+                  </span>
+                )}
+              </h3>
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noreferrer"
+                class="text-xs font-mono text-slate-500 hover:text-slate-800 underline"
+              >
+                {project.linkText}
+              </a>
+            </div>
+            <p class="text-[11px] font-mono text-slate-600 mb-0.5">
+              {project.stack}
+            </p>
+            <p class="text-xs text-slate-700 leading-normal">
+              {project.description}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- FULL-STACK APPLICATIONS -->
+  <section class="mb-5">
+    <h2
+      class="text-xs uppercase font-bold tracking-wider text-slate-500 border-b border-slate-200 pb-1 mb-3"
+    >
+      Full-Stack Applications
+    </h2>
+
+    <div class="space-y-3">
+      {
+        fullStackProjects.map((project) => (
+          <div class="print-break-inside-avoid">
+            <div class="flex flex-wrap justify-between items-baseline gap-1">
+              <h3 class="text-xs sm:text-sm font-bold text-slate-900 inline-flex items-center gap-1.5">
+                <span>{project.name}</span>
+                {project.badge && (
+                  <span class="inline-block px-1.5 py-0.5 text-[10px] font-medium text-slate-600 bg-slate-100 border border-slate-200 rounded">
+                    {project.badge}
+                  </span>
+                )}
+              </h3>
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noreferrer"
+                class="text-xs font-mono text-slate-500 hover:text-slate-800 underline"
+              >
+                {project.linkText}
+              </a>
+            </div>
+            <p class="text-[11px] font-mono text-slate-600 mb-0.5">
+              {project.stack}
+            </p>
+            <p class="text-xs text-slate-700 leading-normal">
+              {project.description}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="print-break-inside-avoid">
+    <h2
+      class="text-xs uppercase font-bold tracking-wider text-slate-500 border-b border-slate-200 pb-1 mb-2"
+    >
+      Education
+    </h2>
+    <div class="flex flex-wrap justify-between items-baseline gap-1">
+      <h3 class="text-xs sm:text-sm font-bold text-slate-900">
+        Bachelor of Technology in Information Technology
+      </h3>
+      <span class="text-xs font-medium text-slate-500 font-mono">2021 – 2024</span>
+    </div>
+    <p class="text-xs font-semibold text-slate-700 mt-0.5">
+      Suan Dusit University <span class="font-normal text-slate-500"
+        >— Faculty of Science and Technology</span
+      >
+    </p>
+    <p class="text-xs text-slate-700 mt-1">
+      <strong class="font-semibold text-slate-900">Honors:</strong> First-Class Honors
+      (GPA: 3.77 / 4.00)
+    </p>
+  </section>
+</main>
