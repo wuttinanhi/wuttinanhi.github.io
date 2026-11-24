@@ -32,7 +32,7 @@
   },
   "summary": {
     "show": "cv",
-    "text": "Software Engineer with a First-Class Honors degree in Information Technology and strong expertise in backend systems, full-stack web development, and DevOps automation. Open-source contributor to the Rust ecosystem (<code>deadpool-rs</code>) and creator of multiple developer tools, including a Firecracker MicroVM Rust code execution server, a Rust LLDB MCP server, a PostgreSQL cluster setup and management tool, and an automated VPS deployment CLI. Proficient across <strong>Rust, Go, TypeScript, Python, and Java (Spring Boot)</strong>, with hands-on experience in <strong>PostgreSQL, Docker, Linux infrastructure, and cloud administration</strong>."
+    "text": "Software Engineer with a First-Class Honors degree in Information Technology and strong expertise in backend systems, full-stack web development, and DevOps automation. Open-source contributor to the Rust ecosystem (<code>deadpool-rs</code>) and creator of multiple developer tools, including a AWS Firecracker MicroVM Rust code execution server, a Rust LLDB MCP server, a PostgreSQL cluster setup and management tool, and an automated VPS deployment CLI. Proficient across <strong>Rust, Go, TypeScript, Python, and Java (Spring Boot)</strong>, with hands-on experience in <strong>PostgreSQL, Docker, Linux infrastructure, and cloud administration</strong>."
   },
   "skills": [
     {
@@ -47,7 +47,7 @@
     },
     {
       "label": "Frontend & UI",
-      "items": "React, Next.js, Vue.js, Nuxt.js, Svelte, React Native, Bootstrap 5, TailwindCSS, PrimeFaces",
+      "items": "React, Vue.js, Nuxt.js, Next.js, Svelte, React Native, Bootstrap 5, TailwindCSS, PrimeFaces",
       "show": "both"
     },
     {
@@ -57,16 +57,16 @@
     },
     {
       "label": "DevOps & Cloud",
-      "items": "Docker, Terraform, Ansible, Linux Server Administration, GCP, DigitalOcean, Cloudflare, Git",
+      "items": "Git, Docker, Terraform, Ansible, Linux Server Administration, GCP, DigitalOcean, Cloudflare",
       "show": "both"
     },
     {
-      "label": "Testing & Tools",
-      "items": "Playwright, Selenium",
+      "label": "Testing",
+      "items": "Playwright, Puppeteer, Selenium",
       "show": "both"
     },
     {
-      "label": "Others",
+      "label": "API & Libraries",
       "items": "Stripe API, Unity (Mirror Networking)",
       "show": "both"
     },
@@ -85,19 +85,19 @@
       "show": "both",
       "highlights": [
         {
-          "text": "<strong>Open-Source Contributions (<code>deadpool-rs</code>):</strong> Contributed merged pull requests to the <code>deadpool</code> Rust connection pool ecosystem, resolving DevContainer startup failures, optimizing Docker build caching via <code>.dockerignore</code> and <code>postCreateCommand</code> restructuring (<a href=\"https://github.com/deadpool-rs/deadpool/pull/477\" target=\"_blank\" rel=\"noreferrer\">#477</a>), and fixing macro visibility by exporting <code>QueueMode</code> in <code>managed_reexports</code> (<a href=\"https://github.com/deadpool-rs/deadpool/pull/478\" target=\"_blank\" rel=\"noreferrer\">#478</a>).",
+          "text": "<strong>Open-Source Contributions (<code>deadpool-rs</code>):</strong> Contributed merged pull requests to the <code>deadpool</code>. a Rust connection pool crate, resolving DevContainer startup failures, optimizing Docker build caching via <code>.dockerignore</code> and <code>postCreateCommand</code> restructuring (<a href=\"https://github.com/deadpool-rs/deadpool/pull/477\" target=\"_blank\" rel=\"noreferrer\">#477</a>), and fixing macro visibility by exporting <code>QueueMode</code> in <code>managed_reexports</code> (<a href=\"https://github.com/deadpool-rs/deadpool/pull/478\" target=\"_blank\" rel=\"noreferrer\">#478</a>).",
           "show": "both"
         },
         {
-          "text": "<strong>Infrastructure & DevOps Tooling:</strong> Architected and open-sourced multiple systems tools in Rust and Go, including a declarative TOML-based VPS deployment CLI (<code>crane</code>), a web-based PostgreSQL cluster supervisor (<code>pgvisor</code>), and a sandboxed Rust code execution server powered by AWS Firecracker MicroVMs.",
+          "text": "<strong>Infrastructure & DevOps Tooling:</strong> Architected and open-sourced multiple systems tools in Rust and Go, including a declarative TOML-based VPS deployment CLI (<code>crane</code>), a PostgreSQL cluster supervisor (<code>pgvisor</code>), and a sandboxed Rust code execution server powered by AWS Firecracker MicroVMs.",
           "show": "both"
         },
         {
-          "text": "<strong>Full-Stack System Architecture:</strong> Designed and built end-to-end transactional applications across Rust, Go, and Java Spring Boot, implementing background job workers, Stripe payment lifecycles (webhooks, refunds, cancellations), multi-role dashboards, and QR-based ordering workflows.",
+          "text": "<strong>Full-Stack System Architecture:</strong> Designed and built applications across Rust, Go, and Java Spring Boot, implementing background job workers, Stripe payment lifecycles (webhooks, refunds, cancellations), multi-role web dashboards, QR Code usage, and PDF report printing.",
           "show": "both"
         },
         {
-          "text": "<strong>Technical Writing:</strong> Author and maintain <a href=\"https://thedreambook.github.io\" target=\"_blank\" rel=\"noreferrer\"><strong>The Dream Book</strong></a>, an open-access engineering blog documenting systems programming, backend architecture, and DevOps practices.",
+          "text": "<strong>Technical Writing:</strong> Author and maintain <a href=\"https://thedreambook.github.io\" target=\"_blank\" rel=\"noreferrer\"><strong>thedreambook.github.io</strong></a>, an open-access engineering blog documenting systems programming, backend architecture, and DevOps practices.",
           "show": "both"
         }
       ]
@@ -159,7 +159,7 @@
     {
       "name": "Crane — Declarative VPS Deployment CLI",
       "category": "systems",
-      "stack": "Rust/Go, PostgreSQL, Linux Firewall, DNS APIs, TOML",
+      "stack": "Rust, PostgreSQL, Linux, TOML, Cloudflare API",
       "link": "https://github.com/dreamoutbox/crane",
       "linkText": "github.com/dreamoutbox/crane",
       "description": "Built a zero-hassle deployment CLI tool allowing developers to deploy applications directly to VPS servers from a single TOML configuration file. Automated PostgreSQL database provisioning, scheduled backups, Linux firewall configuration, and domain DNS record management.",
@@ -177,7 +177,7 @@
     {
       "name": "PgVisor — PostgreSQL Cluster Supervisor",
       "category": "systems",
-      "stack": "Rust, PostgreSQL, Web Dashboard",
+      "stack": "Rust, PostgreSQL, Docker, S3",
       "link": "https://github.com/dreamoutbox/pgvisor",
       "linkText": "github.com/dreamoutbox/pgvisor",
       "description": "Developed a lightweight PostgreSQL cluster management and monitoring supervisor in Rust featuring a user-friendly web dashboard for operational visibility.",
@@ -204,20 +204,29 @@
     {
       "name": "Docker Volume Backup Tool",
       "category": "systems",
-      "stack": "Tools (Rust)",
+      "stack": "Rust, Docker, S3",
       "link": "https://github.com/dreamoutbox/docker-backup-tool-rs",
       "linkText": "github.com/dreamoutbox/docker-backup-tool-rs",
-      "description": "Built a fast CLI utility in Rust for automating Docker volume and container state backups.",
+      "description": "Built a fast CLI utility in Rust for automating Docker volume backups.",
       "show": "both"
     },
     {
       "name": "myconfig CLI",
       "category": "systems",
-      "stack": "Tools (Go)",
+      "stack": "Golang, Git",
       "link": "https://github.com/dreamoutbox/my_config_cli",
       "linkText": "github.com/dreamoutbox/my_config_cli",
       "description": "Developed a Golang CLI tool to streamline backing up, versioning, and restoring system configuration files via Git.",
       "show": "cv"
+    },
+    {
+      "name": "Go Point-of-Sale (POS) System",
+      "category": "fullstack",
+      "stack": "Go, SQLite",
+      "link": "https://github.com/dreamoutbox/go-pos",
+      "linkText": "github.com/dreamoutbox/go-pos",
+      "description": "Created a Point-of-Sale system featuring real-time inventory tracking, stock management, and automated sales reporting.",
+      "show": "both"
     },
     {
       "name": "Apartment Management ERP",
@@ -234,16 +243,7 @@
       "stack": "Rust, PostgreSQL",
       "link": "https://github.com/dreamoutbox/rust-restaurant-system",
       "linkText": "github.com/dreamoutbox/rust-restaurant-system",
-      "description": "Developed an end-to-end restaurant ordering system enabling customers to scan table QR codes to place orders, paired with real-time order management dashboards for waitstaff and kitchen teams.",
-      "show": "both"
-    },
-    {
-      "name": "Go Point-of-Sale (POS) System",
-      "category": "fullstack",
-      "stack": "Go, SQLite",
-      "link": "https://github.com/dreamoutbox/go-pos",
-      "linkText": "github.com/dreamoutbox/go-pos",
-      "description": "Created a fast retail Point-of-Sale system featuring real-time inventory tracking, stock management, and automated sales reporting.",
+      "description": "Developed an restaurant ordering system enabling customers to scan table QR codes to place orders, paired with real-time order management dashboards for waitstaff and kitchen teams.",
       "show": "both"
     },
     {
@@ -253,7 +253,7 @@
       "link": "https://github.com/dreamoutbox/theater-seat-booking",
       "linkText": "github.com/dreamoutbox/theater-seat-booking",
       "description": "Architected a concurrent ticket reservation platform in Rust using asynchronous background workers to handle seat locks and prevent double-booking. Integrated full Stripe payment lifecycle flows, including checkout sessions, automated cancellations, and payment refunds.",
-      "show": "both"
+      "show": "cv"
     },
     {
       "name": "Delivery App Website",
@@ -261,7 +261,7 @@
       "stack": "Go, HTMX, PostgreSQL, S3 Object Storage",
       "link": "https://github.com/dreamoutbox/delivery-app",
       "linkText": "github.com/dreamoutbox/delivery-app",
-      "description": "Built a responsive logistics and delivery web application using Go and HTMX, featuring tailored real-time operational dashboards for merchants, riders, customers, and administrators, backed by PostgreSQL and S3 storage.",
+      "description": "Built a POC food logistics and delivery web application using Go and HTMX, featuring real-time operational dashboards for merchants, riders, customers, and administrators, backed by PostgreSQL and S3 storage.",
       "show": "cv"
     },
     {
