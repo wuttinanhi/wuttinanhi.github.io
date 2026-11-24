@@ -1,8 +1,8 @@
 {
   "profile": {
     "name": "Wuttinan Hanglim",
-    "title": "Full-Stack & Systems Software Engineer",
-    "subtitle": "(Rust, Go, TypeScript & DevOps)",
+    "title": "Full-Stack Software Engineer",
+    "subtitle": "",
     "location": "Thonburi, Bangkok 10600, Thailand",
     "email": "wuttinanwork@gmail.com",
     "linkedin": {
@@ -71,7 +71,7 @@
       "show": "both"
     },
     {
-      "label": "Spoken Languages",
+      "label": "Languages",
       "items": "Thai (Native), English (TOEIC: 775 — Listening: 445, Reading: 330, tested on 2023)",
       "show": "both"
     }
@@ -85,19 +85,19 @@
       "show": "both",
       "highlights": [
         {
-          "text": "<strong>Open-Source Contributions (<code>deadpool-rs</code>):</strong> Contributed merged pull requests to the <code>deadpool</code>. a Rust connection pool crate, resolving DevContainer startup failures, optimizing Docker build caching via <code>.dockerignore</code> and <code>postCreateCommand</code> restructuring (<a href=\"https://github.com/deadpool-rs/deadpool/pull/477\" target=\"_blank\" rel=\"noreferrer\">#477</a>), and fixing macro visibility by exporting <code>QueueMode</code> in <code>managed_reexports</code> (<a href=\"https://github.com/deadpool-rs/deadpool/pull/478\" target=\"_blank\" rel=\"noreferrer\">#478</a>).",
+          "text": "<strong>Open-Source (<code>deadpool-rs</code>):</strong> Merged PRs fixing DevContainer/Docker build caching (<a href=\"https://github.com/deadpool-rs/deadpool/pull/477\" target=\"_blank\" rel=\"noreferrer\">#477</a>) and exporting <code>QueueMode</code> macro visibility (<a href=\"https://github.com/deadpool-rs/deadpool/pull/478\" target=\"_blank\" rel=\"noreferrer\">#478</a>).",
           "show": "both"
         },
         {
-          "text": "<strong>Infrastructure & DevOps Tooling:</strong> Architected and open-sourced multiple systems tools in Rust and Go, including a declarative TOML-based VPS deployment CLI (<code>crane</code>), a PostgreSQL cluster supervisor (<code>pgvisor</code>), and a sandboxed Rust code execution server powered by AWS Firecracker MicroVMs.",
+          "text": "<strong>DevOps & Systems Tools:</strong> Built Rust and Go tools: TOML VPS deployer (<code>crane</code>), PostgreSQL supervisor (<code>pgvisor</code>), and Firecracker MicroVM Rust sandbox.",
           "show": "both"
         },
         {
-          "text": "<strong>Full-Stack System Architecture:</strong> Designed and built applications across Rust, Go, and Java Spring Boot, implementing background job workers, Stripe payment lifecycles (webhooks, refunds, cancellations), multi-role web dashboards, QR Code usage, and PDF report printing.",
+          "text": "<strong>Full-Stack Apps:</strong> Built Rust, Go, and Spring Boot apps with background workers, Stripe payments, role-based dashboards, QR ordering, and PDF reports.",
           "show": "both"
         },
         {
-          "text": "<strong>Technical Writing:</strong> Author and maintain <a href=\"https://thedreambook.github.io\" target=\"_blank\" rel=\"noreferrer\"><strong>thedreambook.github.io</strong></a>, an open-access engineering blog documenting systems programming, backend architecture, and DevOps practices.",
+          "text": "<strong>Technical Writing:</strong> Author of <a href=\"https://thedreambook.github.io\" target=\"_blank\" rel=\"noreferrer\"><strong>thedreambook.github.io</strong></a>, covering systems programming, backend design, and DevOps.",
           "show": "both"
         }
       ]
@@ -110,15 +110,15 @@
       "show": "both",
       "highlights": [
         {
-          "text": "Executed manual and automated quality assurance testing for a large-scale government web system using an internal Java and Selenium testing framework.",
+          "text": "Performed manual and automated QA testing for a government web system using a Java/Selenium framework.",
           "show": "both"
         },
         {
-          "text": "Documented software defects, tracked test coverage, and collaborated with engineering teams to ensure compliance with strict government project specifications.",
+          "text": "Logged defects, tracked test coverage, and worked with engineers to meet government specifications.",
           "show": "both"
         },
         {
-          "text": "Built a full-stack web application module using JavaServer Faces (JSF), PrimeFaces, and PostgreSQL under the direct mentorship of a Senior Software Engineer.",
+          "text": "Built a full-stack web module with JSF, PrimeFaces, and PostgreSQL under senior engineer mentorship.",
           "show": "both"
         }
       ]
@@ -131,15 +131,15 @@
       "show": "both",
       "highlights": [
         {
-          "text": "Workflow Automation: Automated bulk directory updates for the university website by surveying faculty via Google Forms and writing a Python script to programmatically generate and deploy HTML content.",
+          "text": "Automated bulk staff directory updates using Google Forms surveys and a Python HTML generator script.",
           "show": "both"
         },
         {
-          "text": "Collaborated on redesigning the university's WordPress web portal to modernize the UI and improve navigation usability.",
+          "text": "Redesigned the university WordPress portal to modernize UI and improve navigation.",
           "show": "both"
         },
         {
-          "text": "Provided hardware, network, and software troubleshooting for faculty workstations, printers, and university-wide events.",
+          "text": "Provided hardware, network, and software support for faculty workstations and events.",
           "show": "both"
         }
       ]
@@ -166,15 +166,6 @@
       "show": "both"
     },
     {
-      "name": "Rust Playground Server (MicroVM Sandbox)",
-      "category": "systems",
-      "stack": "Rust, AWS Firecracker MicroVM, Linux Virtualization",
-      "link": "https://github.com/dreamoutbox/rust-playground-server",
-      "linkText": "github.com/dreamoutbox/rust-playground-server",
-      "description": "Engineered a secure remote code execution server for compiling and running untrusted Rust code inside isolated AWS Firecracker MicroVMs.",
-      "show": "cv"
-    },
-    {
       "name": "PgVisor — PostgreSQL Cluster Supervisor",
       "category": "systems",
       "stack": "Rust, PostgreSQL, Docker, S3",
@@ -193,9 +184,18 @@
       "show": "cv"
     },
     {
+      "name": "Rust Playground Server (AWS Firecracker MicroVM Sandbox)",
+      "category": "systems",
+      "stack": "Rust, AWS Firecracker, MicroVM, Linux Virtualization",
+      "link": "https://github.com/dreamoutbox/rust-playground-server",
+      "linkText": "github.com/dreamoutbox/rust-playground-server",
+      "description": "Engineered a secure remote code execution server for compiling and running untrusted Rust code inside isolated AWS Firecracker MicroVMs.",
+      "show": "cv"
+    },
+    {
       "name": "Crontext — Human Natural Language to CRON Library",
       "category": "systems",
-      "stack": "Rust (Library Crate)",
+      "stack": "Rust, Crate, Library",
       "link": "https://github.com/dreamoutbox/crontext",
       "linkText": "github.com/dreamoutbox/crontext",
       "description": "Published a reusable Rust crate that parses human-readable schedule expressions into standard CRON syntax.",
@@ -208,7 +208,7 @@
       "link": "https://github.com/dreamoutbox/docker-backup-tool-rs",
       "linkText": "github.com/dreamoutbox/docker-backup-tool-rs",
       "description": "Built a fast CLI utility in Rust for automating Docker volume backups.",
-      "show": "both"
+      "show": "cv"
     },
     {
       "name": "myconfig CLI",
