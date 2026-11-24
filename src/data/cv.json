@@ -1,0 +1,296 @@
+{
+  "profile": {
+    "name": "Wuttinan Hanglim",
+    "title": "Full-Stack Software Engineer",
+    "subtitle": "",
+    "location": "Thonburi, Bangkok 10600, Thailand",
+    "email": "wuttinanwork@gmail.com",
+    "linkedin": {
+      "label": "linkedin.com/in/wuttinanhanglim",
+      "url": "https://www.linkedin.com/in/wuttinanhanglim"
+    },
+    "github": [
+      {
+        "label": "dreamoutbox",
+        "url": "https://github.com/dreamoutbox"
+      },
+      {
+        "label": "wuttinanhi",
+        "url": "https://github.com/wuttinanhi"
+      }
+    ],
+    "websites": [
+      {
+        "label": "wuttinanhi.github.io",
+        "url": "https://wuttinanhi.github.io"
+      },
+      {
+        "label": "thedreambook.github.io",
+        "url": "https://thedreambook.github.io"
+      }
+    ]
+  },
+  "summary": {
+    "show": "cv",
+    "text": "Software Engineer with a First-Class Honors degree in Information Technology and strong expertise in backend systems, full-stack web development, and DevOps automation. Open-source contributor to the Rust ecosystem (<code>deadpool-rs</code>) and creator of multiple developer tools, including a AWS Firecracker MicroVM Rust code execution server, a Rust LLDB MCP server, a PostgreSQL cluster setup and management tool, and an automated VPS deployment CLI. Proficient across <strong>Rust, Go, TypeScript, Python, and Java (Spring Boot)</strong>, with hands-on experience in <strong>PostgreSQL, Docker, Linux infrastructure, and cloud administration</strong>."
+  },
+  "skills": [
+    {
+      "label": "Programming Languages",
+      "items": "Rust, Go, TypeScript, JavaScript, Python, SQL, Bash, Java, C#, PHP",
+      "show": "both"
+    },
+    {
+      "label": "Backend & Systems",
+      "items": "Rust (Actix, Axum), Go (Gin, Gorm), Spring Boot, Node.js, REST APIs",
+      "show": "both"
+    },
+    {
+      "label": "Frontend & UI",
+      "items": "React, Vue.js, Nuxt.js, Next.js, Svelte, React Native, Bootstrap 5, TailwindCSS, PrimeFaces",
+      "show": "both"
+    },
+    {
+      "label": "Databases & Storage",
+      "items": "PostgreSQL, MySQL, SQLite, S3-Object Storage",
+      "show": "both"
+    },
+    {
+      "label": "DevOps & Cloud",
+      "items": "Git, Docker, Terraform, Ansible, Linux Server Administration, GCP, DigitalOcean, Cloudflare",
+      "show": "both"
+    },
+    {
+      "label": "Testing",
+      "items": "Playwright, Puppeteer, Selenium",
+      "show": "both"
+    },
+    {
+      "label": "API & Libraries",
+      "items": "Stripe API, Unity (Mirror Networking)",
+      "show": "both"
+    },
+    {
+      "label": "Languages",
+      "items": "Thai (Native), English (TOEIC: 775 — Listening: 445, Reading: 330, tested on 2023)",
+      "show": "both"
+    }
+  ],
+  "experience": [
+    {
+      "role": "Independent Software Engineer & Open-Source Contributor",
+      "company": "Self-Directed / Open Source",
+      "location": "Bangkok, Thailand",
+      "period": "May 2024 – Present",
+      "show": "both",
+      "highlights": [
+        {
+          "text": "<strong>Open-Source (<code>deadpool-rs</code>):</strong> Merged PRs fixing DevContainer/Docker build caching (<a href=\"https://github.com/deadpool-rs/deadpool/pull/477\" target=\"_blank\" rel=\"noreferrer\">#477</a>) and exporting <code>QueueMode</code> macro visibility (<a href=\"https://github.com/deadpool-rs/deadpool/pull/478\" target=\"_blank\" rel=\"noreferrer\">#478</a>).",
+          "show": "both"
+        },
+        {
+          "text": "<strong>DevOps & Systems Tools:</strong> Built Rust and Go tools: TOML VPS deployer (<code>crane</code>), PostgreSQL supervisor (<code>pgvisor</code>), and Firecracker MicroVM Rust sandbox.",
+          "show": "both"
+        },
+        {
+          "text": "<strong>Full-Stack Apps:</strong> Built Rust, Go, and Spring Boot apps with background workers, Stripe payments, role-based dashboards, QR ordering, and PDF reports.",
+          "show": "both"
+        },
+        {
+          "text": "<strong>Technical Writing:</strong> Author of <a href=\"https://thedreambook.github.io\" target=\"_blank\" rel=\"noreferrer\"><strong>thedreambook.github.io</strong></a>, covering systems programming, backend design, and DevOps.",
+          "show": "both"
+        }
+      ]
+    },
+    {
+      "role": "Software Developer & QA Tester Intern",
+      "company": "Summit Computer Co., Ltd.",
+      "location": "Bangkok, Thailand",
+      "period": "Jan 2024 – Apr 2024",
+      "show": "both",
+      "highlights": [
+        {
+          "text": "Performed manual and automated QA testing for a government web system using a Java/Selenium framework.",
+          "show": "both"
+        },
+        {
+          "text": "Logged defects, tracked test coverage, and worked with engineers to meet government specifications.",
+          "show": "both"
+        },
+        {
+          "text": "Built a full-stack web module with JSF, PrimeFaces, and PostgreSQL under senior engineer mentorship.",
+          "show": "both"
+        }
+      ]
+    },
+    {
+      "role": "Web Developer & IT Support Intern",
+      "company": "Suan Dusit University",
+      "location": "Bangkok, Thailand",
+      "period": "Apr 2023 – Jul 2023",
+      "show": "both",
+      "highlights": [
+        {
+          "text": "Automated bulk staff directory updates using Google Forms surveys and a Python HTML generator script.",
+          "show": "both"
+        },
+        {
+          "text": "Redesigned the university WordPress portal to modernize UI and improve navigation.",
+          "show": "both"
+        },
+        {
+          "text": "Provided hardware, network, and software support for faculty workstations and events.",
+          "show": "both"
+        }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Fire Survival Game",
+      "badge": "2nd Prize Winner",
+      "category": "fullstack",
+      "stack": "Unity, C#, Mirror Networking",
+      "link": "https://youtu.be/jF_XaidROFE",
+      "linkText": "youtu.be/jF_XaidROFE",
+      "description": "Awarded 2nd Prize in a national competition organized by the Department of Disaster Prevention and Mitigation (DDPM) for creating a multiplayer 3D emergency evacuation simulation game.",
+      "show": "both"
+    },
+    {
+      "name": "Crane — Declarative VPS Deployment CLI",
+      "category": "systems",
+      "stack": "Rust, PostgreSQL, Linux, TOML, Cloudflare API",
+      "link": "https://github.com/dreamoutbox/crane",
+      "linkText": "github.com/dreamoutbox/crane",
+      "description": "Built a zero-hassle deployment CLI tool allowing developers to deploy applications directly to VPS servers from a single TOML configuration file. Automated PostgreSQL database provisioning, scheduled backups, Linux firewall configuration, and domain DNS record management.",
+      "show": "both"
+    },
+    {
+      "name": "PgVisor — PostgreSQL Cluster Supervisor",
+      "category": "systems",
+      "stack": "Rust, PostgreSQL, Docker, S3",
+      "link": "https://github.com/dreamoutbox/pgvisor",
+      "linkText": "github.com/dreamoutbox/pgvisor",
+      "description": "Developed a lightweight PostgreSQL cluster management and monitoring supervisor in Rust featuring a user-friendly web dashboard for operational visibility.",
+      "show": "both"
+    },
+    {
+      "name": "Rust LLDB MCP Server",
+      "category": "systems",
+      "stack": "Rust, LLDB, Model Context Protocol (MCP)",
+      "link": "https://github.com/dreamoutbox/rust_lldb_mcp",
+      "linkText": "github.com/dreamoutbox/rust_lldb_mcp",
+      "description": "Created a Model Context Protocol (MCP) server wrapping the LLDB debugger, enabling AI assistants and LLM agents to interactively inspect, debug, and analyze compiled binaries.",
+      "show": "cv"
+    },
+    {
+      "name": "Rust Playground Server (AWS Firecracker MicroVM Sandbox)",
+      "category": "systems",
+      "stack": "Rust, AWS Firecracker, MicroVM, Linux Virtualization",
+      "link": "https://github.com/dreamoutbox/rust-playground-server",
+      "linkText": "github.com/dreamoutbox/rust-playground-server",
+      "description": "Engineered a secure remote code execution server for compiling and running untrusted Rust code inside isolated AWS Firecracker MicroVMs.",
+      "show": "cv"
+    },
+    {
+      "name": "Crontext — Human Natural Language to CRON Library",
+      "category": "systems",
+      "stack": "Rust, Crate, Library",
+      "link": "https://github.com/dreamoutbox/crontext",
+      "linkText": "github.com/dreamoutbox/crontext",
+      "description": "Published a reusable Rust crate that parses human-readable schedule expressions into standard CRON syntax.",
+      "show": "cv"
+    },
+    {
+      "name": "Docker Volume Backup Tool",
+      "category": "systems",
+      "stack": "Rust, Docker, S3",
+      "link": "https://github.com/dreamoutbox/docker-backup-tool-rs",
+      "linkText": "github.com/dreamoutbox/docker-backup-tool-rs",
+      "description": "Built a fast CLI utility in Rust for automating Docker volume backups.",
+      "show": "cv"
+    },
+    {
+      "name": "myconfig CLI",
+      "category": "systems",
+      "stack": "Golang, Git",
+      "link": "https://github.com/dreamoutbox/my_config_cli",
+      "linkText": "github.com/dreamoutbox/my_config_cli",
+      "description": "Developed a Golang CLI tool to streamline backing up, versioning, and restoring system configuration files via Git.",
+      "show": "cv"
+    },
+    {
+      "name": "Go Point-of-Sale (POS) System",
+      "category": "fullstack",
+      "stack": "Go, SQLite",
+      "link": "https://github.com/dreamoutbox/go-pos",
+      "linkText": "github.com/dreamoutbox/go-pos",
+      "description": "Created a Point-of-Sale system featuring real-time inventory tracking, stock management, and automated sales reporting.",
+      "show": "both"
+    },
+    {
+      "name": "Apartment Management ERP",
+      "category": "fullstack",
+      "stack": "Java, Spring Boot, Thymeleaf, SQLite, OpenPDF",
+      "link": "https://github.com/dreamoutbox/java-apartment-management-system",
+      "linkText": "github.com/dreamoutbox/java-apartment-management-system",
+      "description": "Engineered a property management system using modular, reusable UI components tailored across 5 role-based views (Landlord, Manager, Accountant, Technician, Tenant). Implemented automated billing workflows that dynamically generate downloadable PDF invoices and receipts using OpenPDF.",
+      "show": "both"
+    },
+    {
+      "name": "QR Restaurant Management System",
+      "category": "fullstack",
+      "stack": "Rust, PostgreSQL",
+      "link": "https://github.com/dreamoutbox/rust-restaurant-system",
+      "linkText": "github.com/dreamoutbox/rust-restaurant-system",
+      "description": "Developed an restaurant ordering system enabling customers to scan table QR codes to place orders, paired with real-time order management dashboards for waitstaff and kitchen teams.",
+      "show": "both"
+    },
+    {
+      "name": "Theater Seat Booking System",
+      "category": "fullstack",
+      "stack": "Rust, PostgreSQL, Stripe API, Background Workers",
+      "link": "https://github.com/dreamoutbox/theater-seat-booking",
+      "linkText": "github.com/dreamoutbox/theater-seat-booking",
+      "description": "Architected a concurrent ticket reservation platform in Rust using asynchronous background workers to handle seat locks and prevent double-booking. Integrated full Stripe payment lifecycle flows, including checkout sessions, automated cancellations, and payment refunds.",
+      "show": "cv"
+    },
+    {
+      "name": "Delivery App Website",
+      "category": "fullstack",
+      "stack": "Go, HTMX, PostgreSQL, S3 Object Storage",
+      "link": "https://github.com/dreamoutbox/delivery-app",
+      "linkText": "github.com/dreamoutbox/delivery-app",
+      "description": "Built a POC food logistics and delivery web application using Go and HTMX, featuring real-time operational dashboards for merchants, riders, customers, and administrators, backed by PostgreSQL and S3 storage.",
+      "show": "cv"
+    },
+    {
+      "name": "NuxtShop E-Commerce",
+      "category": "fullstack",
+      "stack": "Nuxt.js, Vue.js, and Stripe API",
+      "link": "https://github.com/wuttinanhi/nuxtshop",
+      "linkText": "github.com/wuttinanhi/nuxtshop",
+      "description": "Full-stack e-commerce storefront with Stripe integration.",
+      "show": "cv"
+    },
+    {
+      "name": "Rust Forum",
+      "category": "fullstack",
+      "stack": "Rust, Actix Web, PostgreSQL, Handlebars, and Bootstrap 5",
+      "link": "https://github.com/wuttinanhi/rust-forum",
+      "linkText": "github.com/wuttinanhi/rust-forum",
+      "description": "Server-side rendered forum. with users, posts, comments features",
+      "show": "cv"
+    }
+  ],
+  "education": [
+    {
+      "degree": "Bachelor of Technology in Information Technology",
+      "institution": "Suan Dusit University",
+      "faculty": "Faculty of Science and Technology",
+      "period": "2021 – 2024",
+      "honors": "First-Class Honors (GPA: 3.77 / 4.00)",
+      "show": "both"
+    }
+  ]
+}
